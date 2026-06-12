@@ -1,9 +1,9 @@
 {
-  "name": "csa-cet-association",
+  "name": "CSA-Website-",
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://joellijo32.github.io/csa-website",
+  "homepage": "https://joellijo32.github.io/CSA-Website-",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
