@@ -1,11 +1,40 @@
-const navItems = ['About', 'Gallery', 'Achievements', 'Placements', 'Resources'];
+const navItems = [
+  "About",
+  "Gallery",
+  "Achievements",
+  "Placements",
+  "Resources",
+];
 
 function LogoMark() {
   return (
     <svg viewBox="0 0 48 48" aria-hidden="true" className="brand-mark">
-      <path d="M18 5v20l-6 3 12 7" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M26 9v20l-6 3 12 7" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.95" />
-      <path d="M34 13v20l-6 3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+      <path
+        d="M18 5v20l-6 3 12 7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M26 9v20l-6 3 12 7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.95"
+      />
+      <path
+        d="M34 13v20l-6 3"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.9"
+      />
     </svg>
   );
 }
@@ -13,9 +42,30 @@ function LogoMark() {
 function TargetIcon() {
   return (
     <svg viewBox="0 0 48 48" aria-hidden="true" className="target-icon">
-      <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" strokeWidth="3" />
-      <circle cx="24" cy="24" r="12" fill="none" stroke="currentColor" strokeWidth="3" />
-      <circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" strokeWidth="3" />
+      <circle
+        cx="24"
+        cy="24"
+        r="18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <circle
+        cx="24"
+        cy="24"
+        r="12"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <circle
+        cx="24"
+        cy="24"
+        r="6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
     </svg>
   );
 }
@@ -25,7 +75,7 @@ function HeroArtwork() {
     <div className="art-card" aria-hidden="true">
       <div className="art-glow art-glow-a" />
       <div className="art-glow art-glow-b" />
-      <div className="floating-icon floating-code">{'</>'}</div>
+      <div className="floating-icon floating-code">{"</>"}</div>
       <div className="floating-icon floating-cap">🎓</div>
       <div className="floating-icon floating-bars">▮▮▮</div>
       <div className="floating-icon floating-cloud">☁</div>
@@ -105,7 +155,11 @@ function App() {
       <div className="ambient ambient-b" />
 
       <header className="topbar" aria-label="Primary">
-        <a className="brand" href="#home" aria-label="Computer Science Association CET home">
+        <a
+          className="brand"
+          href="#home"
+          aria-label="Computer Science Association CET home"
+        >
           <LogoMark />
         </a>
 
@@ -117,7 +171,11 @@ function App() {
           ))}
         </nav>
 
-        <a className="target-link" href="#resources" aria-label="Jump to resources">
+        <a
+          className="target-link"
+          href="#resources"
+          aria-label="Jump to resources"
+        >
           <TargetIcon />
         </a>
       </header>

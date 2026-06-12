@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@700;800;900&display=swap");
 
 :root {
   color-scheme: dark;
@@ -27,11 +27,15 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 72% 34%, rgba(184, 128, 116, 0.42), transparent 26%),
+    radial-gradient(
+      circle at 72% 34%,
+      rgba(184, 128, 116, 0.42),
+      transparent 26%
+    ),
     radial-gradient(circle at 18% 20%, rgba(72, 50, 68, 0.62), transparent 35%),
     linear-gradient(135deg, #4a3a42 0%, #5b4847 52%, #6a5250 100%);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 a {
@@ -61,7 +65,11 @@ a {
   right: -4rem;
   width: 34rem;
   height: 34rem;
-  background: radial-gradient(circle, rgba(255, 192, 170, 0.26), rgba(255, 192, 170, 0));
+  background: radial-gradient(
+    circle,
+    rgba(255, 192, 170, 0.26),
+    rgba(255, 192, 170, 0)
+  );
 }
 
 .ambient-b {
@@ -69,7 +77,11 @@ a {
   bottom: -10rem;
   width: 30rem;
   height: 30rem;
-  background: radial-gradient(circle, rgba(145, 115, 165, 0.2), rgba(145, 115, 165, 0));
+  background: radial-gradient(
+    circle,
+    rgba(145, 115, 165, 0.2),
+    rgba(145, 115, 165, 0)
+  );
 }
 
 .topbar {
@@ -116,7 +128,9 @@ a {
   font-size: 0.98rem;
   line-height: 1;
   box-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.05);
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
 }
 
 .nav-pill:hover {
@@ -143,7 +157,7 @@ a {
 .hero-copy h1 {
   margin: 0;
   color: #fffdfd;
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-size: clamp(4rem, 7.9vw, 6.95rem);
   font-weight: 900;
   line-height: 0.89;
@@ -171,7 +185,9 @@ a {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   font-size: 1rem;
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
 }
 
 .cta:hover {
@@ -191,7 +207,11 @@ a {
   position: absolute;
   inset: 0;
   border-radius: 2rem;
-  background: radial-gradient(circle at 50% 40%, rgba(230, 222, 255, 0.1), transparent 50%);
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(230, 222, 255, 0.1),
+    transparent 50%
+  );
 }
 
 .art-glow-a {
@@ -250,9 +270,15 @@ a {
   margin-bottom: 0.55rem;
 }
 
-.screen-dot.pink { background: #e5a0c7; }
-.screen-dot.amber { background: #f0cca1; }
-.screen-dot.lavender { background: #bcabd9; }
+.screen-dot.pink {
+  background: #e5a0c7;
+}
+.screen-dot.amber {
+  background: #f0cca1;
+}
+.screen-dot.lavender {
+  background: #bcabd9;
+}
 
 .screen-line {
   display: block;
@@ -262,9 +288,15 @@ a {
   background: rgba(134, 112, 156, 0.18);
 }
 
-.screen-line.short { width: 1.6rem; }
-.screen-line.medium { width: 2.1rem; }
-.screen-line.long { width: 2.65rem; }
+.screen-line.short {
+  width: 1.6rem;
+}
+.screen-line.medium {
+  width: 2.1rem;
+}
+.screen-line.long {
+  width: 2.65rem;
+}
 
 .screen-main {
   display: flex;
@@ -297,9 +329,18 @@ a {
   background: rgba(129, 116, 170, 0.24);
 }
 
-.mini-line.wide { top: 0.72rem; width: 4.6rem; }
-.mini-line:not(.wide) { top: 1.35rem; width: 3.4rem; }
-.mini-line.short { top: 1.95rem; width: 2.8rem; }
+.mini-line.wide {
+  top: 0.72rem;
+  width: 4.6rem;
+}
+.mini-line:not(.wide) {
+  top: 1.35rem;
+  width: 3.4rem;
+}
+.mini-line.short {
+  top: 1.95rem;
+  width: 2.8rem;
+}
 
 .mini-pill {
   position: absolute;
@@ -587,7 +628,7 @@ a {
 }
 
 .laptop-screen::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
