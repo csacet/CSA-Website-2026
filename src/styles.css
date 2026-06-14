@@ -192,14 +192,6 @@ a {
   color: var(--text);
 }
 
-.target-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  position: relative;
-  z-index: 1;
-}
 
 .brand-logo {
   height: 3.8rem;

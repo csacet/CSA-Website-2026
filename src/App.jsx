@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import TargetIcon from "./components/TargetIcon";
 import HeroArtwork from "./components/HeroArtwork";
 import csaLogo from "./assets/csa_logo.svg";
 import "./styles.css";
@@ -61,14 +60,7 @@ function App() {
         </nav>
 
         <div className="topbar-actions">
-          <a
-            className="target-link"
-            href="#resources"
-            aria-label="Jump to resources"
-          >
-            <TargetIcon />
-          </a>
-
+          
           <button
             className={`menu-toggle ${isMenuOpen ? "is-active" : ""}`}
             onClick={toggleMenu}
