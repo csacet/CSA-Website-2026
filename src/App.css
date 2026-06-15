@@ -1,13 +1,37 @@
+/* Resource section styles*/
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap');
 
 :root {
   --text-primary: #202020;
   --text-secondary: #836C5A;
   --text-hover: #40362e;
-  --bg: #836c5a;
-  --bg-secondary: #202020;
+  --resources-bg: #836c5a;
+  --resources-bg-secondary: #202020;
 
   --sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  /* margin: 0; 
+  font-family: var(--sans);
+  color: var(--text-primary);
+  background-color: var(--resources-bg);
+} */
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  background-color: var(--resources-bg);
+  margin-top:400px;
+  font-family: var(--sans);
+  color: var(--text-primary);
+  padding-bottom: 180px;
 }
 
 .title-section {
@@ -68,7 +92,7 @@
 }
 
 .top {
-  background-color: var(--bg-secondary);
+  background-color: var(--resources-bg-secondary);
   height: 2px;
   width: 100%;
   position: absolute;
@@ -83,7 +107,7 @@
   bottom: 0;
 }
 
-.container {
+.title-container {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -106,14 +130,14 @@ a {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background-color: var(--bg-secondary);
+  background-color: var(--resources-bg-secondary);
   margin-bottom: 2px;
 }
 
 .resource-name {
   font-family: var(--sans);
   color: var(--text-secondary);
-  background-color: var(--bg-secondary);
+  background-color: var(--resources-bg-secondary);
   font-weight: 700;
   font-style: bold;
   padding-left: 20px;
@@ -123,7 +147,7 @@ a {
 }
 
 .sub-resources {
-  background-color: var(--bg);
+  background-color: var(--resources-bg);
   display: flex;
   flex-direction: column;
 }
@@ -133,7 +157,7 @@ a {
   flex-direction: row;
   align-items: center;
   padding: 5px 40px;
-  border-bottom: 1px solid var(--bg-secondary);
+  border-bottom: 1px solid var(--resources-bg-secondary);
   left: 0;
 }
 
@@ -153,7 +177,7 @@ a {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: var(--bg-secondary);
+  background: var(--resources-bg-secondary);
   border-radius: 50%;
   margin-right: 8px;
   flex-shrink: 0;
@@ -219,7 +243,7 @@ a {
   .sub-resource-item {
     padding: 10px 0;
     padding-left: 14%;
-    border-bottom: 2px solid var(--bg-secondary);
+    border-bottom: 2px solid var(--resources-bg-secondary);
   }
 
   .sub-resource-name {
@@ -279,7 +303,7 @@ a {
   }
 
   .sub-resource-item {
-    border-bottom: 2px solid var(--bg-secondary);
+    border-bottom: 2px solid var(--resources-bg-secondary);
   }
 
   .sub-resource-name {

@@ -1,16 +1,31 @@
-# React + Vite
+# Computer Science Association (CSA) CET
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive landing page for the Computer Science Association at CET.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Styling:** Vanilla CSS
+- **Deployment:** GitHub Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **Responsive Design:** Optimized for desktop and mobile views.
+- **Interactive UI:** Smooth navigation with glassmorphism-inspired pills.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### Development
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Build
+```bash
+npm run build
+```
+
