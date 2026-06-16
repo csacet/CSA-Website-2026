@@ -222,18 +222,7 @@ a {
     inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.1);
 }
 
-.art-card {
-  position: relative;
-  width: min(100%, 38rem);
-  justify-self: end;
-  margin-top: 2.6rem;
-}
 
-.art-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 @media (max-width: 1120px) {
   .home-h1 {
@@ -255,11 +244,7 @@ a {
     margin-inline: auto;
   }
 
-  .art-card {
-    justify-self: center;
-    margin-top: 0;
-    transform: scale(0.93);
-  }
+
 }
 
 @media (max-width: 1024px) {
@@ -312,8 +297,5 @@ a {
     margin-top: 1.5rem;
   }
 
-  .art-card {
-    width: min(calc(100vw - (2 * var(--mobile-gutter))), 30rem);
-    margin-top: 0.8rem;
-  }
+
 }

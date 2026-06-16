@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import csaLogo from "../../assets/csa_logo.svg";
+import csaLogo from "../../../assets/csa_logo.svg";
 import "./Navbar.css";
 
 const navItems = [

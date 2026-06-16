@@ -1,5 +1,6 @@
 import React from "react";
-import heroIcon from "../assets/hero_icon.webp";
+import heroIcon from "../../../assets/hero_icon.webp";
+import "./HeroArtwork.css";
 
 function HeroArtwork() {
   return (
@@ -16,3 +17,4 @@ function HeroArtwork() {
 }
 
 export default HeroArtwork;
+

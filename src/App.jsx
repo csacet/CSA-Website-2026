@@ -1,7 +1,7 @@
 import React from "react";
 
-import HeroArtwork from "./components/HeroArtwork";
-import Navbar from "./components/Navbar/Navbar";
+import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
+import Navbar from "./components/home/Navbar/Navbar";
 import "./styles.css";
 
 function App() {

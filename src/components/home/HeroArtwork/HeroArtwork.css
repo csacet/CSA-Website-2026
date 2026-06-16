@@ -1,0 +1,27 @@
+.art-card {
+  position: relative;
+  width: min(100%, 38rem);
+  justify-self: end;
+  margin-top: 2.6rem;
+}
+
+.art-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1120px) {
+  .art-card {
+    justify-self: center;
+    margin-top: 0;
+    transform: scale(0.93);
+  }
+}
+
+@media (max-width: 780px) {
+  .art-card {
+    width: min(calc(100vw - (2 * var(--mobile-gutter))), 30rem);
+    margin-top: 0.8rem;
+  }
+}
