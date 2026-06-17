@@ -16,68 +16,78 @@
 
 .help-page {
   min-height: 100vh;
-  padding: 2rem;
+  background-color: #836C5A;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #836C5A ;
+  position: relative;
 }
 
 .help-heading {
-  font-size: 8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  margin-bottom: 1rem;
+  font-size: clamp(5rem, 12vw, 12rem);
+  letter-spacing: -0.08em;
   color: var(--color-text);
+  line-height: 1;
+  margin: 0;
 }
 
 .description {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(5rem, 12vw, 12rem);
+  letter-spacing: -0.08em;
   color: var(--color-text);
+  line-height: 1;
+  margin: 0;
 }
 
 .contact-flex {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  width: 100%;
-  margin-bottom: 4rem;
-  color: var(--color-text);
+  gap: clamp(2rem, 10vw, 14rem);
+  width: 90%;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  color: var(--color-text);
+  gap: 0.6rem;
 }
 
 .contact-name {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  letter-spacing: -4px;
   color: var(--color-text);
-
+  text-align: center;
   
 }
 
 .contact-role {
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+  text-align: center;
   color: var(--color-text);
 }
 
 .contact-phone,
 .contact-mail {
-  font-size: 0.9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
   color: var(--color-text);
+  text-align: center;
 }
 
 .contact-mail {
   text-decoration: none;
-  color: inherit;
 }
 
 .contact-mail:hover {
@@ -85,12 +95,21 @@
 }
 
 .footer {
-  font-size: 0.8rem;
-  opacity: 0.5;
-  margin-top: auto;
-  color: #836C5A;
-  background-color: var(--color-text);
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 4rem;
+  background: #202020;
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.help-footer p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -2px;
+  color: #836C5A;
 }
