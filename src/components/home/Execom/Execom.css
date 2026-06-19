@@ -11,6 +11,10 @@
   margin-bottom: 60px;
 }
 
+.execom-title-section {
+  position: relative;
+}
+
 .dinosaur-logo-execom {
   position: absolute;
   right: 20%;
@@ -24,6 +28,33 @@
   position: relative;
   justify-content: center;
   align-items: center;
+}
+
+.execom-border-frame {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-26%);
+  pointer-events: none;
+}
+
+.execom-border-top {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+}
+
+.execom-border-bottom {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -5px;
 }
 
 .execom-title {
