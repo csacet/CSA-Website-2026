@@ -139,6 +139,7 @@
   );
   color: var(--text);
   font-size: 0.98rem;
+  font-weight: 500;
   line-height: 1;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -155,7 +156,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .nav-pill.active {
   background: var(--text);
   color: var(--bg);
@@ -163,7 +163,6 @@
   box-shadow:
     0 0.5rem 1.8rem rgba(255, 255, 255, 0.12),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  font-weight: 600;
 }
 
 .nav-pill.active:hover {
@@ -316,7 +315,6 @@
     background: var(--text);
     color: var(--bg);
     border-color: var(--text);
-    font-weight: 600;
     box-shadow: none;
     transform: none;
     backdrop-filter: none;
