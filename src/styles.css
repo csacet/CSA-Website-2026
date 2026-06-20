@@ -36,6 +36,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-padding-top: 5.8rem;
 }
 
 html::-webkit-scrollbar {
@@ -69,7 +70,11 @@ a {
 .page-shell {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
+}
+
+section[id] {
+  scroll-margin-top: 5.8rem;
 }
 
 .ambient {
