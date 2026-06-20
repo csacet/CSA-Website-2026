@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../home/Navbar/Navbar";
 
 const achievements = [
      {
@@ -62,11 +61,10 @@ function Achievements(){
 
     return (
     <main className="achievements-page">
-      <Navbar/>
       <div className="title-section">
           <div className="title-frame">
             <div className='line left'></div>
-            <h1 className="title">Resources</h1>
+            <h1 className="title">Achievements</h1>
             <div className='line right'></div>
           </div>
           <div className="border-frame">
