@@ -1,6 +1,7 @@
 import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
 import Resources from "./components/home/Resource/Resources";
+import Help from "./components/Help/help";
 import "./styles.css";
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
 
       <section id="resources">
         <Resources />
+      </section>
+
+      <section>
+        <Help />
       </section>
     </main>
   );
