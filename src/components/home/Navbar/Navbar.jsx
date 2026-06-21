@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import csaLogo from "../../../assets/csa_logo.svg";
 import "./Navbar.css";
 
@@ -12,6 +12,8 @@ const navItems = [
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,6 +23,76 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.toLowerCase());
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -30% 0px",
+      threshold: 0,
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    const sectionsToObserve = ["home", ...sectionIds];
+    sectionsToObserve.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    const handleScrollBounds = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition < 50) {
+        setActiveSection("");
+        return;
+      }
+
+      if (scrollPosition + windowHeight >= documentHeight - 50) {
+        const existingSections = sectionIds.filter((id) => document.getElementById(id));
+        if (existingSections.length > 0) {
+          setActiveSection(existingSections[existingSections.length - 1]);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollBounds);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScrollBounds);
+    };
+  }, []);
+
   return (
     <>
       <div
@@ -29,7 +101,7 @@ function Navbar() {
         aria-hidden="true"
       />
 
-      <header className="topbar" aria-label="Primary">
+      <header className={`topbar ${isScrolled ? "is-scrolled" : ""}`} aria-label="Primary">
         <a
           className="brand"
           href="#"
@@ -46,7 +118,7 @@ function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="nav-pill"
+              className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
               onClick={closeMenu}
             >
               {item}

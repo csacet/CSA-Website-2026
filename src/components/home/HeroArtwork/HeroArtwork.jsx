@@ -1,4 +1,3 @@
-import React from "react";
 import heroIcon from "../../../assets/hero_icon.webp";
 import "./HeroArtwork.css";
 

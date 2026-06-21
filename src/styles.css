@@ -36,6 +36,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  scroll-padding-top: 5.8rem;
 }
 
 html::-webkit-scrollbar {
@@ -69,7 +70,11 @@ a {
 .page-shell {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
+}
+
+section[id] {
+  scroll-margin-top: 5.8rem;
 }
 
 .ambient {
@@ -110,8 +115,8 @@ a {
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   align-items: center;
   gap: clamp(2rem, 4vw, 4.5rem);
-  min-height: calc(100vh - 5.2rem);
-  padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4.4rem) 2rem;
+  min-height: 100vh;
+  padding: clamp(6.2rem, 10vw, 7.8rem) clamp(2rem, 5vw, 4.4rem) 2rem;
 }
 
 .hero-copy {
@@ -232,7 +237,7 @@ a {
   .hero {
     grid-template-columns: 1fr;
     justify-items: center;
-    padding-top: 1rem;
+    padding-top: 5.8rem;
   }
 
   .hero-copy {
@@ -271,7 +276,7 @@ a {
     align-items: center;
     gap: 1.6rem;
     min-height: auto;
-    padding: 1.5rem var(--mobile-gutter) 2.5rem;
+    padding: 4.6rem var(--mobile-gutter) 2.5rem;
   }
 
   .hero-copy {
