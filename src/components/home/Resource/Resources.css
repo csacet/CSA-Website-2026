@@ -22,16 +22,18 @@
   background-color: var(--resources-bg);
 } */
 
-#root {
-  min-height: 100vh;
-}
+/* #root {
+  min-height: 300vh;
+} */
 
 .container {
+  position: relative;
   background-color: var(--resources-bg);
-  margin-top:400px;
+  /* margin-top:400px; */
   font-family: var(--sans);
   color: var(--text-primary);
-  padding-bottom: 180px;
+  /* padding-bottom: 180px; */
+  min-height: 100vh;
 }
 
 .title-section {
@@ -40,7 +42,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 .title-frame {
@@ -63,21 +65,23 @@
 }
 
 .line {
-  width: 1px;
+  width: 1.7px;
   background: linear-gradient(to bottom,
       var(--text-secondary),
       var(--text-primary),
       var(--text-secondary));
-  height: 100px;
   flex-shrink: 0;
 }
 
 .left {
   margin-right: -6px;
+    height: 95px;
 }
 
 .right {
   margin-left: 2px;
+  height: 80px;
+  margin-top: 10px;
 }
 
 .border-frame {
@@ -197,7 +201,7 @@ a {
   position: absolute;
   right:8%;
   width: 30px;
-  margin-top: 47px;
+  margin-top: 65px;
 }
 
 }
@@ -208,16 +212,17 @@ a {
   }
 
   .line {
-    height: 200px;
-    width: 2px;
+    width: 2.2px;
   }
 
   .left {
-    margin-right: -10px;
+    margin-right: -8px;
+        height: 150px;
   }
 
   .right {
-    margin-left: 5px;
+    margin-left: 3px;
+        height: 140px;
   }
 
   .border-frame {
@@ -264,7 +269,7 @@ a {
 
   .dinosaur-logo {
     width: 40px;
-    margin-top: 87px;
+    margin-top: 82px;
   }
 }
 
@@ -274,20 +279,22 @@ a {
   }
 
   .line {
-    height: 220px;
+    /* height: 200px; */
     width: 2px;
   }
 
   .left {
     margin-right: -11px;
+    height: 190px;
   }
 
   .right {
     margin-left: 5px;
+    height: 170px;
   }
 
   .border-frame {
-    height: 75px;
+    height: 74px;
   }
   .top {
     top: 0;
@@ -321,7 +328,7 @@ a {
 
   .dinosaur-logo {
     width: 70px;
-    margin-top: 85px;
+    margin-top: 90px;
   }
 } 
 
