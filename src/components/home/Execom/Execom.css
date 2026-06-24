@@ -1,0 +1,272 @@
+.execom-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: #3a2a32;
+}
+
+.execom-title-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.execom-title-section {
+  position: relative;
+}
+
+.dinosaur-logo-execom {
+  position: absolute;
+  right: 20%;
+  top: 15px;
+  width: 35px;
+}
+
+.execom-title-frame {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.execom-border-frame {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-26%);
+  pointer-events: none;
+}
+
+.execom-border-top {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: -10px;
+}
+
+.execom-border-bottom {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.execom-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-align: center;
+  margin: 0;
+  padding: 0 40px;
+  color: #f8f6f4;
+}
+
+.execom-line {
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #f8f6f4, transparent);
+  flex-shrink: 0;
+}
+
+.execom-line-left {
+  margin-right: -47px;
+  position: relative;
+  top: 15px;
+}
+
+.execom-line-right {
+  margin-left: -35px;
+
+  position: relative;
+  top: 15px;
+}
+
+.execom-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.execom-carousel-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.execom-carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.execom-nav-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 246, 244, 0.3);
+  background: rgba(58, 42, 50, 0.8);
+  color: #f8f6f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.execom-nav-btn:hover:not(:disabled) {
+  background: rgba(248, 246, 244, 0.15);
+  border-color: rgba(248, 246, 244, 0.5);
+  transform: scale(1.1);
+}
+
+.execom-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.execom-card {
+  flex-shrink: 0;
+  width: 320px;
+  background: rgba(58, 42, 50, 0.6);
+  border: 1px solid rgba(248, 246, 244, 0.2);
+  border-radius: 16px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.execom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.execom-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 246, 244, 0.3);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #3a2a32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.execom-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f8f6f4;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.execom-position {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(248, 246, 244, 0.7);
+  margin: 0 0 16px 0;
+}
+
+.execom-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(248, 246, 244, 0.8);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+}
+
+.execom-phone svg {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .execom-title {
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .execom-title {
+    font-size: 130px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dinosaur-logo-execom {
+    right: 10%;
+    width: 30px;
+  }
+
+  .execom-card {
+    width: 280px;
+  }
+
+  .execom-carousel-wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .execom-section {
+    padding: 60px 0;
+  }
+
+  .execom-title {
+    font-size: 50px;
+    padding: 0 20px;
+  }
+
+  .execom-line {
+    height: 60px;
+  }
+
+  .dinosaur-logo-execom {
+    right: 5%;
+    width: 25px;
+  }
+
+  .execom-carousel-wrapper {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .execom-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .execom-card {
+    width: 260px;
+  }
+}

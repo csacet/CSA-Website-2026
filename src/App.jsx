@@ -1,5 +1,7 @@
 import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
+import Gallery from "./components/home/Gallery/Gallery";
+import Execom from "./components/home/Execom/Execom";
 import Resources from "./components/home/Resource/Resources";
 import Help from "./components/Help/help";
 import "./styles.css";
@@ -35,6 +37,14 @@ function App() {
         </div>
 
         <HeroArtwork />
+      </section>
+
+      <section id="gallery">
+        <Gallery />
+      </section>
+
+      <section id="execom">
+        <Execom />
       </section>
 
       <section id="resources">

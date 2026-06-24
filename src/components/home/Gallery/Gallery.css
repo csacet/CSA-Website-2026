@@ -1,0 +1,384 @@
+.gallery-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: #3a2a32;
+  overflow: hidden;
+}
+
+.gallery-title-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.gallery-title-section {
+  position: relative;
+}
+
+.dinosaur-logo-gallery {
+  position: absolute;
+  right: 18%;
+  top: 11px;
+  width: 35px;
+}
+
+.gallery-title-frame {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-border-frame {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-26%);
+  pointer-events: none;
+}
+
+.gallery-border-top {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top:-12px;
+}
+
+.gallery-border-bottom {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.gallery-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-align: center;
+  margin: 0;
+  padding: 0 40px;
+  color: #f8f6f4;
+}
+
+.gallery-line {
+  width: 4px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #f8f6f4, transparent);
+  flex-shrink: 0;
+}
+
+.gallery-line-left {
+  position: relative;
+  top: 15px;
+  margin-right: -46px;
+}
+
+.gallery-line-right {
+   position: relative;
+  top: 15px;
+  margin-left: -31px;
+}
+
+.gallery-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.gallery-carousel {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.gallery-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-card {
+  flex-shrink: 0;
+  width: 360px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(248, 246, 244, 0.15);
+  cursor: pointer;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #4a3a42;
+}
+
+.gallery-image-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 9, 0.96);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Lightbox Container */
+.lightbox-container {
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: lbSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lbSlideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 16px 0;
+}
+
+.lightbox-counter {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(248, 246, 244, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.lightbox-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 246, 244, 0.15);
+  background: rgba(248, 246, 244, 0.06);
+  color: #f8f6f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(248, 246, 244, 0.12);
+  border-color: rgba(248, 246, 244, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Body */
+.lightbox-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.lightbox-nav {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 246, 244, 0.15);
+  background: rgba(248, 246, 244, 0.06);
+  color: #f8f6f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(248, 246, 244, 0.12);
+  border-color: rgba(248, 246, 244, 0.3);
+}
+
+.lightbox-nav:active {
+  transform: scale(0.92);
+}
+
+.lightbox-image-container {
+  flex: 1;
+  min-width: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #2a1e24;
+  border: 1px solid rgba(248, 246, 244, 0.08);
+}
+
+.lightbox-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+.lightbox-footer {
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+
+.lightbox-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8f6f4;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.02em;
+}
+
+.lightbox-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(248, 246, 244, 0.4);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .gallery-title {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dinosaur-logo-gallery {
+    right: 10%;
+    width: 30px;
+  }
+
+  .gallery-card {
+    width: 300px;
+    height: 210px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-title {
+    font-size: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lightbox-container {
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 16px;
+  }
+
+  .lightbox-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-nav svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-section {
+    padding: 60px 0;
+  }
+
+  .gallery-title {
+    font-size: 50px;
+    padding: 0 20px;
+  }
+
+  .gallery-line {
+    height: 60px;
+  }
+
+  .dinosaur-logo-gallery {
+    right: 5%;
+    width: 25px;
+  }
+
+  .gallery-card {
+    width: 260px;
+    height: 180px;
+  }
+
+  .gallery-carousel {
+    gap: 16px;
+  }
+
+  .lightbox-header {
+    padding: 0 0 12px 0;
+  }
+
+  .lightbox-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-body {
+    gap: 8px;
+  }
+
+  .lightbox-title {
+    font-size: 16px;
+  }
+}
