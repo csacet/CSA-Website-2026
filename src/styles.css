@@ -13,12 +13,38 @@
   --accent-soft: #b8a7e6;
   --code: #e996b6;
   --gold: #ffc77f;
+  --csa-earth-bg: #836c5a;
+  --csa-earth-text: #202020;
 }
 
 @font-face {
   font-family: "Milker";
   src: url("./assets/fonts/Milker.otf");
   font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay-Bold.ttf");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -75,6 +101,157 @@ a {
 
 section[id] {
   scroll-margin-top: 5.8rem;
+}
+
+.csa-earth-section {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 5.2rem);
+  overflow: hidden;
+  background: var(--csa-earth-bg);
+  color: var(--csa-earth-text);
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  scroll-margin-top: 5.2rem;
+  padding: clamp(3.2rem, 6vw, 5rem) 0 clamp(3.6rem, 6vw, 5rem);
+}
+
+@media (max-width: 980px) {
+  .csa-earth-section {
+    min-height: auto;
+    padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.4rem, 4.5vw, 3.4rem);
+  }
+}
+
+.csa-section-heading {
+  --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
+  --csa-heading-line-top: -0.3em;
+  --csa-heading-line-bottom: 0.265em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1.8rem, 3vw, 3.2rem) 0;
+  width: 100%;
+  color: var(--csa-earth-text);
+  font-size: var(--csa-heading-size);
+}
+
+.csa-section-heading::before,
+.csa-section-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--csa-earth-text);
+  pointer-events: none;
+}
+
+.csa-section-heading::before {
+  top: 50%;
+  transform: translateY(var(--csa-heading-line-top));
+}
+
+.csa-section-heading::after {
+  top: 50%;
+  transform: translateY(var(--csa-heading-line-bottom));
+}
+
+.csa-section-heading-frame {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.csa-section-heading-title {
+  margin: 0;
+  color: var(--csa-earth-text);
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: inherit;
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.csa-section-heading-line {
+  width: 1px;
+  height: 1.1em;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 32, 32, 0.22),
+    var(--csa-earth-text),
+    rgba(32, 32, 32, 0.22)
+  );
+}
+
+.csa-section-heading-line:first-child {
+  transform: translateX(0.07em);
+}
+
+.csa-section-heading-line:last-child {
+  transform: translateX(0.04em);
+}
+
+.csa-heading-dino,
+.csa-heading-disk {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  color: var(--csa-earth-text);
+  pointer-events: none;
+}
+
+.csa-heading-dino {
+  --csa-heading-dino-size: clamp(1.15rem, 3.2vw, 3.5rem);
+  width: var(--csa-heading-dino-size);
+  height: var(--csa-heading-dino-size);
+  right: clamp(4.4rem, 11vw, 11.2rem);
+  top: calc(50% + var(--csa-heading-line-top));
+  transform: translateY(calc(-100% + 2px));
+}
+
+.csa-heading-disk {
+  --csa-heading-disk-size: clamp(1.3rem, 3vw, 3.125rem);
+  width: var(--csa-heading-disk-size);
+  height: var(--csa-heading-disk-size);
+  top: clamp(-1.6rem, -2.4vw, -0.85rem);
+  right: clamp(2rem, 6vw, 5rem);
+}
+
+
+@media (max-width: 640px) {
+  .csa-earth-section {
+    min-height: auto;
+    padding: clamp(2.4rem, 8vw, 3.2rem) 0 clamp(2.7rem, 9vw, 3.6rem);
+  }
+
+  .csa-section-heading {
+    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
+    padding-block: clamp(1rem, 5vw, 1.4rem);
+  }
+
+  .csa-section-heading-title {
+    line-height: 0.82;
+  }
+
+  .csa-heading-dino {
+    --csa-heading-dino-size: clamp(1rem, 6vw, 1.75rem);
+    right: clamp(1.5rem, 8vw, 3.5rem);
+  }
+
+  .csa-heading-disk {
+    --csa-heading-disk-size: clamp(0.95rem, 5vw, 1.45rem);
+    top: clamp(-1.35rem, -5vw, -0.8rem);
+    right: clamp(0.55rem, 4vw, 1.25rem);
+  }
 }
 
 .ambient {
@@ -237,11 +414,14 @@ section[id] {
   .hero {
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: clamp(1.5rem, 3vw, 2.4rem);
+    min-height: auto;
     padding-top: 5.8rem;
+    padding-bottom: clamp(2.4rem, 5vw, 4rem);
   }
 
   .hero-copy {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     text-align: center;
   }
 
