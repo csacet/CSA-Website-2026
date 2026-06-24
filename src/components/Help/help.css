@@ -29,6 +29,7 @@
 .contact-flex {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: center;
   gap: clamp(2rem, 6vw, 12rem); 
@@ -50,7 +51,7 @@
   align-items: center;
   text-align: center;
   gap: 28px; 
-  width: 332px;
+  width: min(332px, 100%);
 }
 
 .contact-identity-group {
@@ -133,4 +134,48 @@
   letter-spacing: -1px;
   color: #836C5A;
   margin: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .help-page.csa-earth-section {
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: calc(clamp(2.4rem, 4.5vw, 3.4rem) + 4rem);
+  }
+
+  .help-heading {
+    --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
+    padding-bottom: clamp(0.75rem, 1.2vw, 1.1rem);
+  }
+
+  .description {
+    margin: clamp(1rem, 2.5vw, 1.7rem) 0 clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.15rem, 3vw, 1.9rem);
+  }
+
+  .contact-flex {
+    flex-wrap: wrap;
+    gap: clamp(1.8rem, 4vw, 3rem) clamp(2rem, 6vw, 4rem);
+    margin-bottom: 1.8rem;
+  }
+
+  .contact {
+    width: clamp(14rem, 38vw, 20rem);
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .help-page.csa-earth-section {
+    padding-top: clamp(2.4rem, 8vw, 3.2rem);
+    padding-bottom: calc(clamp(2.7rem, 9vw, 3.6rem) + 4rem);
+  }
+
+  .help-heading {
+    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
+  }
+
+  .description {
+    width: min(90%, 26rem);
+    margin: 1rem 0 1.6rem;
+  }
 }

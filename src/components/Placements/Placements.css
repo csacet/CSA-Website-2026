@@ -146,12 +146,15 @@
 }
 
 @media (max-width: 980px) {
-  .placements-section {
+  .placements-section.csa-earth-section {
     min-height: auto;
+    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(2.4rem, 4.5vw, 3.4rem);
   }
 
   .placements-content {
     min-height: auto;
+    gap: clamp(0.95rem, 2vw, 1.45rem);
   }
 
   .placements-heading {
@@ -164,12 +167,17 @@
 
   .placement-stats {
     grid-template-columns: repeat(2, minmax(8.5rem, 1fr));
-    gap: 2.3rem 1.5rem;
+    gap: clamp(1.35rem, 3vw, 2rem) 1.5rem;
     width: min(100% - 2rem, 38rem);
   }
 }
 
 @media (max-width: 640px) {
+  .placements-section.csa-earth-section {
+    padding-top: clamp(2.4rem, 8vw, 3.2rem);
+    padding-bottom: clamp(2.7rem, 9vw, 3.6rem);
+  }
+
   .placements-content {
     gap: 1.55rem;
   }

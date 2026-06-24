@@ -115,6 +115,13 @@ section[id] {
   padding: clamp(3.2rem, 6vw, 5rem) 0 clamp(3.6rem, 6vw, 5rem);
 }
 
+@media (max-width: 980px) {
+  .csa-earth-section {
+    min-height: auto;
+    padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.4rem, 4.5vw, 3.4rem);
+  }
+}
+
 .csa-section-heading {
   --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
   --csa-heading-line-top: -0.3em;
@@ -241,9 +248,9 @@ section[id] {
   }
 
   .csa-heading-disk {
-    --csa-heading-disk-size: clamp(1.1rem, 6vw, 1.75rem);
-    top: clamp(-1.1rem, -4vw, -0.55rem);
-    right: clamp(1.4rem, 9vw, 2.6rem);
+    --csa-heading-disk-size: clamp(0.95rem, 5vw, 1.45rem);
+    top: clamp(-1.35rem, -5vw, -0.8rem);
+    right: clamp(0.55rem, 4vw, 1.25rem);
   }
 }
 
@@ -407,11 +414,14 @@ section[id] {
   .hero {
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: clamp(1.5rem, 3vw, 2.4rem);
+    min-height: auto;
     padding-top: 5.8rem;
+    padding-bottom: clamp(2.4rem, 5vw, 4rem);
   }
 
   .hero-copy {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     text-align: center;
   }
 
