@@ -1,0 +1,332 @@
+/* Resource section styles*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
+:root {
+  --text-primary: #202020;
+  --text-secondary: #836C5A;
+  --text-hover: #40362e;
+  --resources-bg: #836c5a;
+  --resources-bg-secondary: #202020;
+
+  --sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  /* margin: 0; 
+  font-family: var(--sans);
+  color: var(--text-primary);
+  background-color: var(--resources-bg);
+} */
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  background-color: var(--resources-bg);
+  margin-top:400px;
+  font-family: var(--sans);
+  color: var(--text-primary);
+  padding-bottom: 180px;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.title-frame {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--sans);
+  font-size: 70px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  width: 1px;
+  background: linear-gradient(to bottom,
+      var(--text-secondary),
+      var(--text-primary),
+      var(--text-secondary));
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.left {
+  margin-right: -6px;
+}
+
+.right {
+  margin-left: 2px;
+}
+
+.border-frame {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-26%);
+  pointer-events: none;
+}
+
+.top {
+  background-color: var(--resources-bg-secondary);
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.bottom {
+  background-color: var(--text-primary);
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dinosaur-logo {
+  display: none;
+  position: absolute;
+  /* right:50px;
+  width: 30px;
+  margin-top: 47px; */
+}
+
+a {
+  text-decoration: none;
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--resources-bg-secondary);
+  margin-bottom: 2px;
+}
+
+.resource-name {
+  font-family: var(--sans);
+  color: var(--text-secondary);
+  background-color: var(--resources-bg-secondary);
+  font-weight: 700;
+  font-style: bold;
+  padding-left: 20px;
+  font-size: 23px;
+  margin: 5px;
+  letter-spacing: -0.07em;
+}
+
+.sub-resources {
+  background-color: var(--resources-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-resource-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 40px;
+  border-bottom: 1px solid var(--resources-bg-secondary);
+  left: 0;
+}
+
+.sub-resource-name {
+  font-family: var(--sans);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 18px;
+  font-style: bold;
+}
+
+.sub-resource-name:hover {
+  color: var(--text-hover);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--resources-bg-secondary);
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+
+.arrow {
+  padding-right: 22px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+@media(min-width: 540px){
+  .dinosaur-logo {
+  display: block;
+  position: absolute;
+  right:8%;
+  width: 30px;
+  margin-top: 47px;
+}
+
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 100px;
+  }
+
+  .line {
+    height: 200px;
+    width: 2px;
+  }
+
+  .left {
+    margin-right: -10px;
+  }
+
+  .right {
+    margin-left: 5px;
+  }
+
+  .border-frame {
+    height: 58px;
+  }
+
+  .top {
+    top: 0;
+    height: 2px;
+  }
+
+  .bottom {
+    bottom: 0;
+    top: auto;
+    height: 2px;
+  }
+
+  .resource-name {
+    font-size: 37px;
+    padding-left: 10%;
+  }
+
+  .sub-resource-item {
+    padding: 10px 0;
+    padding-left: 14%;
+    border-bottom: 2px solid var(--resources-bg-secondary);
+  }
+
+  .sub-resource-name {
+    font-size: 25px;
+  }
+
+  .arrow-container{
+    position: absolute;
+    width: 100px;
+    right: 0;
+  }
+
+  .arrow {
+    width: 66px;
+    height: 66px;
+    padding-right: 30px;
+  }
+
+  .dinosaur-logo {
+    width: 40px;
+    margin-top: 87px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 130px;
+  }
+
+  .line {
+    height: 220px;
+    width: 2px;
+  }
+
+  .left {
+    margin-right: -11px;
+  }
+
+  .right {
+    margin-left: 5px;
+  }
+
+  .border-frame {
+    height: 75px;
+  }
+  .top {
+    top: 0;
+  }
+
+  .bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .resource-name {
+    font-size: 45px;
+  }
+
+  .sub-resource-item {
+    border-bottom: 2px solid var(--resources-bg-secondary);
+  }
+
+  .sub-resource-name {
+    font-size: 32px;
+  }
+
+  .arrow-container{
+    position: absolute;
+    width: 130px;
+  }
+  .arrow {
+    width: 77px;
+    right: 140px;
+  }
+
+  .dinosaur-logo {
+    width: 70px;
+    margin-top: 85px;
+  }
+} 
+
+@media (min-width: 1050px) {
+  .dinosaur-logo{
+    display: block;
+  }
+}

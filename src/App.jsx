@@ -1,8 +1,8 @@
-import React from "react";
-
 import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
 import Placements from "./components/placements/Placements";
+import Resources from "./components/home/Resource/Resources";
+import Help from "./components/Help/help";
 import "./styles.css";
 
 function App() {
@@ -38,7 +38,16 @@ function App() {
         <HeroArtwork />
       </section>
 
-      <Placements />
+      <section id="resources">
+        <Placements />
+      </section>
+      <section id="resources">
+        <Resources />
+      </section>
+
+      <section>
+        <Help />
+      </section>
     </main>
   );
 }
