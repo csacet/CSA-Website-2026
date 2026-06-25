@@ -285,40 +285,141 @@
     top: 6px;
   }
 
-  .execom-carousel-wrapper {
+  .execom-mobile {
     padding: 0 12px;
-    gap: 10px;
+  }
+
+  .execom-mobile-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .execom-nav-btn {
     width: 36px;
     height: 36px;
+    flex-shrink: 0;
+    background: rgba(248, 246, 244, 0.08);
+    border: 1px solid rgba(248, 246, 244, 0.15);
+    color: #f8f6f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .execom-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  .execom-nav-btn:hover:not(:disabled) {
+    background: rgba(248, 246, 244, 0.14);
+    border-color: rgba(248, 246, 244, 0.25);
   }
 
   .execom-card {
-    width: 220px;
-    padding: 20px 14px;
+    flex: 1;
+    padding: 0 20px 24px 20px;
     border-radius: 12px;
-    border-width: 1px;
+    background: rgba(248, 246, 244, 0.06);
+    border: 1px solid rgba(248, 246, 244, 0.1);
+    box-shadow: none;
+    color: #f8f6f4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .execom-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 
   .execom-avatar {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 14px;
+    width: 100%;
+    height: 280px;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #1a1014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .execom-name {
-    font-size: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f8f6f4;
+    margin: 0 0 4px 0;
+    letter-spacing: 0;
   }
 
   .execom-position {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(248, 246, 244, 0.55);
+    margin: 0 0 20px 0;
+    font-style: italic;
+  }
+
+  .execom-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(248, 246, 244, 0.85);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .execom-email svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
   }
 
   .execom-phone {
-    font-size: 12px;
-    gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(248, 246, 244, 0.85);
+    font-size: 14px;
+  }
+
+  .execom-phone svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  .execom-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .execom-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(248, 246, 244, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .execom-dot.active {
+    background: #f8f6f4;
   }
 }
