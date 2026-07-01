@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import achievementsImg from "../../assets/achievements1.png";
 import "./achievements.css";
 
 const achievements = [
@@ -8,7 +9,7 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: "/src/assets/achievements1.png",
+    image: achievementsImg,
   },
    {
     id: 2,
@@ -16,7 +17,7 @@ const achievements = [
     category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: "/src/assets/achievements1.png",
+    image: achievementsImg,
   },
    {
     id: 3,
@@ -24,7 +25,7 @@ const achievements = [
     category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: "/src/assets/achievements1.png",
+    image: achievementsImg,
   },
    {
     id: 4,
@@ -32,7 +33,7 @@ const achievements = [
     category: "Coding Competition Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: "/src/assets/achievements1.png",
+    image: achievementsImg,
   },
 
 ];
@@ -66,15 +67,15 @@ function Achievements(){
       <section className="carousel">
           {/* decorative cards */}
         <div className="edge-stack edge-stack--left" aria-hidden="true">
-          <img className="edge-card edge-card--1" src="/src/assets/achievements1.png" />
-          <div className="edge-card edge-card--2" src="/src/assets/achievements1.png"/>
-          <div className="edge-card edge-card--3" src="/src/assets/achievements1.png"/>
+          <img className="edge-card edge-card--1" src={achievementsImg} />
+          <div className="edge-card edge-card--2" src={achievementsImg}/>
+          <div className="edge-card edge-card--3" src={achievementsImg}/>
         </div>
 
         <div className="edge-stack edge-stack--right" aria-hidden="true">
-          <div className="edge-card edge-card--1" src="/src/assets/achievements1.png"/>
-          <div className="edge-card edge-card--2" src="/src/assets/achievements1.png"/>
-          <div className="edge-card edge-card--3" src="/src/assets/achievements1.png"/>
+          <div className="edge-card edge-card--1" src={achievementsImg}/>
+          <div className="edge-card edge-card--2" src={achievementsImg}/>
+          <div className="edge-card edge-card--3" src={achievementsImg}/>
         </div>
 
         
