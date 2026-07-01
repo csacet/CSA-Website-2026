@@ -109,18 +109,16 @@
 
 .poster-card {
   flex-shrink: 0;
-  width: clamp(14rem, 28vw, 22rem);
+  width: clamp(18rem, 28vw, 25rem);
 }
 
 .poster-img {
   width: 100%; height: auto;
   display: block;
-  box-shadow:
-    0px 15px 33px 0px #00000019,
-    0px 59px 59px 0px #00000017,
-    0px 134px 80px 0px #0000000D,
-    0px 237px 95px 0px #00000003,
-    0px 371px 104px 0px #00000000;
+  filter:
+    drop-shadow(0px 15px 33px rgba(0,0,0,0.10))
+    drop-shadow(0px 59px 59px rgba(0,0,0,0.09))
+    drop-shadow(0px 134px 80px rgba(0,0,0,0.05));
 }
 
 .poster-placeholder {
