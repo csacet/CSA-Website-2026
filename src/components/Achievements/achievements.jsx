@@ -86,10 +86,7 @@ function Achievements(){
 
         <div className="carousel-inner">
             <div className="poster-card">
-              {current.image
-                ? <img src={current.image} alt={current.name} className="poster-img" />
-                : <div className="poster-placeholder"><span>{current.name[0]}</span></div>
-              }
+              <img src={current.image} alt={current.name} className="poster-img" />
             </div>
 
           <div className="detail-panel">
