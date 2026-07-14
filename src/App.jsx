@@ -1,16 +1,12 @@
 import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
-<<<<<<< HEAD
 import Gallery from "./components/home/Gallery/Gallery";
 import Execom from "./components/home/Execom/Execom";
-import Resources from "./components/home/Resource/Resources";
-=======
+import Resources from "./components/Resource/Resources";
 import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
-import Resources from "./components/Resource/Resources";
 import Help from "./components/Help/help";
 import Achievements from "./components/Achievements/achievements";
->>>>>>> bdd8a571421da374e4d2f1f24517304edf801a0b
 import "./styles.css";
 
 function App() {
@@ -45,8 +41,6 @@ function App() {
 
         <HeroArtwork />
       </section>
-<<<<<<< HEAD
-
       <section id="gallery">
         <Gallery />
       </section>
@@ -55,18 +49,15 @@ function App() {
         <Execom />
       </section>
 
-=======
-      
       <section id="achievements">
         <Achievements />
       </section>
-      
+
       <section id="placements">
         <Placements />
         <AlumniInsights />
       </section>
-            
->>>>>>> bdd8a571421da374e4d2f1f24517304edf801a0b
+
       <section id="resources">
         <Resources />
       </section>
