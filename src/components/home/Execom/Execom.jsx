@@ -70,14 +70,6 @@ export default function Execom() {
               </div>
               <h3 className="execom-name">{member.name}</h3>
               <p className="execom-position">{member.position}</p>
-              <div className="execom-email">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#f8f6f4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <polyline points="22,6 12,13 2,6" stroke="#f8f6f4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span>{member.email || `${member.name.toLowerCase().replace(/\s+/g, '.')}@cet.ac.in`}</span>
-              </div>
-
             </div>
 
             <button className="execom-nav-btn" onClick={next} disabled={currentIndex === maxIndex} aria-label="Next">
