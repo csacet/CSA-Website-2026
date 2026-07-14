@@ -1,19 +1,35 @@
 import './Execom.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import teamMembers from './execom.json';
 
 export default function Execom() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const trackRef = useRef(null);
+  const [cardStep, setCardStep] = useState(304);
+  const [desktopVisible, setDesktopVisible] = useState(4);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 640);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const update = () => {
+      setIsMobile(window.innerWidth <= 640);
+      if (trackRef.current) {
+        const card = trackRef.current.querySelector('.execom-card');
+        if (card) {
+          const step = card.offsetWidth + 24;
+          setCardStep(step);
+          const viewport = trackRef.current.parentElement;
+          if (viewport) {
+            setDesktopVisible(Math.max(1, Math.floor((viewport.offsetWidth + 24) / step)));
+          }
+        }
+      }
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
   }, []);
 
-  const maxIndex = teamMembers.length - 1;
+  const maxIndex = isMobile ? teamMembers.length - 1 : teamMembers.length - desktopVisible;
 
   const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
   const next = () => setCurrentIndex((i) => Math.min(maxIndex, i + 1));
@@ -86,7 +102,7 @@ export default function Execom() {
           </button>
 
           <div className="execom-carousel-viewport">
-            <div className="execom-carousel-track" style={{ transform: `translateX(-${currentIndex * 304}px)` }}>
+            <div className="execom-carousel-track" ref={trackRef} style={{ transform: `translateX(-${currentIndex * cardStep}px)` }}>
               {teamMembers.map((m, i) => (
                 <div className="execom-card" key={i}>
                   <div className="execom-avatar">
@@ -100,7 +116,7 @@ export default function Execom() {
             </div>
           </div>
 
-          <button className="execom-nav-btn" onClick={next} disabled={currentIndex >= teamMembers.length - 4} aria-label="Next">
+          <button className="execom-nav-btn" onClick={next} disabled={currentIndex >= maxIndex} aria-label="Next">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
             </svg>
