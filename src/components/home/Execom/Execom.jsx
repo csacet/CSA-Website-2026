@@ -1,15 +1,15 @@
 import './Execom.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import teamMembers from './execom.json';
 
 export default function Execom() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const trackRef = useRef(null);
-  const [cardStep, setCardStep] = useState(304);
+  const [cardStep, setCardStep] = useState(384);
   const [desktopVisible, setDesktopVisible] = useState(4);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const update = () => {
       setIsMobile(window.innerWidth <= 640);
       if (trackRef.current) {

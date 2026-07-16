@@ -139,11 +139,11 @@
 
 .execom-card {
   flex-shrink: 0;
-  width: 320px;
+  width: 360px;
   background: rgba(58, 42, 50, 0.6);
   border: 1px solid rgba(248, 246, 244, 0.2);
   border-radius: 16px;
-  padding: 36px 24px;
+  padding: 40px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,12 +157,12 @@
 }
 
 .execom-avatar {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 2px solid rgba(248, 246, 244, 0.3);
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .avatar-placeholder {
@@ -235,7 +235,7 @@
   }
 
   .execom-card {
-    width: 280px;
+    width: 300px;
   }
 
   .execom-carousel-wrapper {
