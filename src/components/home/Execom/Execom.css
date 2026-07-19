@@ -1,0 +1,432 @@
+.execom-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: #3a2a32;
+}
+
+.execom-title-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.execom-title-section {
+  position: relative;
+}
+
+.dinosaur-logo-execom {
+  position: absolute;
+  right: 20%;
+  top: 15px;
+  width: 35px;
+}
+
+.execom-title-frame {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.execom-border-frame {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  top: 50%;
+  transform: translateX(-50%) translateY(-26%);
+  pointer-events: none;
+}
+
+.execom-border-top {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: -10px;
+}
+
+.execom-border-bottom {
+  background-color: #f8f6f4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -25px;
+}
+
+.execom-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-align: center;
+  margin: 0;
+  padding: 0 40px;
+  color: #f8f6f4;
+}
+
+.execom-line {
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #f8f6f4, transparent);
+  flex-shrink: 0;
+}
+
+.execom-line-left {
+  margin-right: -47px;
+  position: relative;
+  top: 15px;
+}
+
+.execom-line-right {
+  margin-left: -35px;
+  position: relative;
+  top: 15px;
+}
+
+.execom-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.execom-carousel-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.execom-carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.execom-nav-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 246, 244, 0.3);
+  background: rgba(58, 42, 50, 0.8);
+  color: #f8f6f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.execom-nav-btn:hover:not(:disabled) {
+  background: rgba(248, 246, 244, 0.15);
+  border-color: rgba(248, 246, 244, 0.5);
+  transform: scale(1.1);
+}
+
+.execom-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.execom-card {
+  flex-shrink: 0;
+  width: 360px;
+  background: rgba(58, 42, 50, 0.6);
+  border: 1px solid rgba(248, 246, 244, 0.2);
+  border-radius: 16px;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.execom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.execom-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(248, 246, 244, 0.3);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #3a2a32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.execom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.execom-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f8f6f4;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.execom-position {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(248, 246, 244, 0.7);
+  margin: 0 0 16px 0;
+}
+
+.execom-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(248, 246, 244, 0.8);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+}
+
+.execom-phone svg {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .execom-title {
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .execom-title {
+    font-size: 130px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dinosaur-logo-execom {
+    right: 10%;
+    width: 30px;
+  }
+
+  .execom-card {
+    width: 300px;
+  }
+
+  .execom-carousel-wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .execom-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .execom-title-container {
+    margin-bottom: 30px;
+  }
+
+  .execom-title {
+    font-size: 50px;
+    padding: 0 20px;
+    letter-spacing: -0.06em;
+  }
+
+  .execom-line {
+    height: 40px;
+    width: 2px;
+  }
+
+  .execom-line-left {
+    margin-right: -22px;
+    top: 6px;
+  }
+
+  .execom-line-right {
+    margin-left: -18px;
+    top: 6px;
+  }
+
+  .execom-border-frame {
+    height: 30px;
+  }
+
+  .execom-border-top {
+    top: -2px;
+  }
+
+  .execom-border-bottom {
+    bottom: -2px;
+  }
+
+  .dinosaur-logo-execom {
+    right: 5%;
+    width: 24px;
+    top: -20px;
+  }
+
+  .execom-mobile {
+    padding: 0 12px;
+  }
+
+  .execom-mobile-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .execom-nav-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: rgba(248, 246, 244, 0.08);
+    border: 1px solid rgba(248, 246, 244, 0.15);
+    color: #f8f6f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .execom-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  .execom-nav-btn:hover:not(:disabled) {
+    background: rgba(248, 246, 244, 0.14);
+    border-color: rgba(248, 246, 244, 0.25);
+  }
+
+  .execom-card {
+    flex: 1;
+    padding: 0 20px 24px 20px;
+    border-radius: 12px;
+    background: rgba(248, 246, 244, 0.06);
+    border: 1px solid rgba(248, 246, 244, 0.1);
+    box-shadow: none;
+    color: #f8f6f4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .execom-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .execom-avatar {
+    width: 100%;
+    height: 280px;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #1a1014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .execom-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f8f6f4;
+    margin: 0 0 4px 0;
+    letter-spacing: 0;
+  }
+
+  .execom-position {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(248, 246, 244, 0.55);
+    margin: 0 0 20px 0;
+    font-style: italic;
+  }
+
+  .execom-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(248, 246, 244, 0.85);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .execom-email svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  .execom-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(248, 246, 244, 0.85);
+    font-size: 14px;
+  }
+
+  .execom-phone svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+  }
+
+  .execom-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .execom-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d0d0d0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .execom-dot.active {
+    background: #2563eb;
+  }
+}
