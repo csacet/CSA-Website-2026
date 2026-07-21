@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import alumniStories from "./alumini.json";
@@ -25,9 +26,9 @@ function AlumniInsightPost({ slug }) {
     return (
       <main className="alumni-post-page csa-earth-section">
         <article className="alumni-post alumni-post-empty">
-          <a className="alumni-post-back" href="/#placements">
+          <Link className="alumni-post-back" to="/#placements">
             Back to Alumni Insights
-          </a>
+          </Link>
           <h1>Insight not found</h1>
           <p>The alumni insight you are looking for is not available.</p>
         </article>
@@ -43,9 +44,9 @@ function AlumniInsightPost({ slug }) {
   return (
     <main className="alumni-post-page csa-earth-section">
       <article className="alumni-post">
-        <a className="alumni-post-back" href="/#placements">
+        <Link className="alumni-post-back" to="/#placements">
           Back to Alumni Insights
-        </a>
+        </Link>
 
         <p className="alumni-post-kicker">Alumni Insight</p>
 
@@ -54,20 +55,20 @@ function AlumniInsightPost({ slug }) {
         </div>
 
         <nav className="alumni-post-nav" aria-label="Alumni insight navigation">
-          <a
+          <Link
             className="alumni-post-nav-link alumni-post-nav-prev"
-            href={`/alumni-insights/${previousStory.slug}`}
+            to={`/alumni-insights/${previousStory.slug}`}
           >
             <span>Previous</span>
             <strong>{previousStory.name}</strong>
-          </a>
-          <a
+          </Link>
+          <Link
             className="alumni-post-nav-link alumni-post-nav-next"
-            href={`/alumni-insights/${nextStory.slug}`}
+            to={`/alumni-insights/${nextStory.slug}`}
           >
             <span>Next</span>
             <strong>{nextStory.name}</strong>
-          </a>
+          </Link>
         </nav>
       </article>
     </main>
