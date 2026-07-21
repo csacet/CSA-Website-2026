@@ -10,6 +10,8 @@ const navItems = [
   "Resources",
 ];
 
+const getSectionHref = (item) => `/#${item.toLowerCase()}`;
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -104,7 +106,7 @@ function Navbar() {
       <header className={`topbar ${isScrolled ? "is-scrolled" : ""}`} aria-label="Primary">
         <a
           className="brand"
-          href="#"
+          href="/#home"
           aria-label="Computer Science Association CET home"
         >
           <img src={csaLogo} alt="CSA Logo" className="brand-logo" />
@@ -117,7 +119,7 @@ function Navbar() {
           {navItems.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={getSectionHref(item)}
               className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
               onClick={closeMenu}
             >

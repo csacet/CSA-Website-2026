@@ -13,7 +13,7 @@ import "./styles.css";
 function App() {
   const alumniPostMatch = window.location.pathname.match(
     /^\/alumni-insights\/([^/]+)\/?$/,
-  );
+  ); // If pages increase react-router could be used instead
 
   if (alumniPostMatch) {
     return (

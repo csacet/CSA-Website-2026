@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import alumniStories from "./alumini.json";
 import "./AlumniInsightPost.css";
 
@@ -18,6 +19,7 @@ function getMarkdown(markdownFile) {
 
 function AlumniInsightPost({ slug }) {
   const story = getAlumniStory(slug);
+  const storyIndex = alumniStories.findIndex((item) => item.slug === slug);
 
   if (!story) {
     return (
@@ -34,6 +36,9 @@ function AlumniInsightPost({ slug }) {
   }
 
   const content = getMarkdown(story.markdown);
+  const previousStory =
+    alumniStories[(storyIndex - 1 + alumniStories.length) % alumniStories.length];
+  const nextStory = alumniStories[(storyIndex + 1) % alumniStories.length];
 
   return (
     <main className="alumni-post-page csa-earth-section">
@@ -45,8 +50,25 @@ function AlumniInsightPost({ slug }) {
         <p className="alumni-post-kicker">Alumni Insight</p>
 
         <div className="alumni-markdown">
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </div>
+
+        <nav className="alumni-post-nav" aria-label="Alumni insight navigation">
+          <a
+            className="alumni-post-nav-link alumni-post-nav-prev"
+            href={`/alumni-insights/${previousStory.slug}`}
+          >
+            <span>Previous</span>
+            <strong>{previousStory.name}</strong>
+          </a>
+          <a
+            className="alumni-post-nav-link alumni-post-nav-next"
+            href={`/alumni-insights/${nextStory.slug}`}
+          >
+            <span>Next</span>
+            <strong>{nextStory.name}</strong>
+          </a>
+        </nav>
       </article>
     </main>
   );

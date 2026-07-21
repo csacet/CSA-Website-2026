@@ -19,6 +19,15 @@ function AlumniInsights() {
     setActiveIndex((currentIndex) => (currentIndex + 1) % alumniStories.length);
   };
 
+  const showStory = (storyIndex) => {
+    if (storyIndex === activeIndex) {
+      return;
+    }
+
+    setSlideDirection(storyIndex > activeIndex ? "next" : "previous");
+    setActiveIndex(storyIndex);
+  };
+
   return (
     <main className="alumni-section csa-earth-section" id="alumni">
       <div className="alumni-content">
@@ -106,6 +115,21 @@ function AlumniInsights() {
             >
               Read more
             </a>
+
+            <div className="alumni-indicators" aria-label="Alumni story slides">
+              {alumniStories.map((story, index) => (
+                <button
+                  className={`alumni-indicator${
+                    index === activeIndex ? " is-active" : ""
+                  }`}
+                  type="button"
+                  key={story.slug}
+                  onClick={() => showStory(index)}
+                  aria-label={`Show ${story.name}'s alumni insight`}
+                  aria-current={index === activeIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
           </article>
 
           <button

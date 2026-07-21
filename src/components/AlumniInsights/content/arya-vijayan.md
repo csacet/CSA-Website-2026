@@ -26,10 +26,14 @@ The test was conducted on the SHL platform. Each section was timed. Questions ca
 - This section had around 30-40 MCQ questions and 40 mins.
 - All core subjects - OS, DBMS, OOPS, CN, DS and some questions related to cloud computing.
 
+---
+
 ## Round 2: Coding test (6th August 2024)
 
 - 45 minutes and 2 questions.
-- Easy - medium level. 
+- Easy - medium level.
+
+---
 
 ## Round 3: GD (12th August 2024)
 
@@ -41,7 +45,9 @@ The test was conducted on the SHL platform. Each section was timed. Questions ca
 - Impact of mobile gaming
 - Night owl v/s early bird
 - How social media can be used constructively?
-- Online and offline education 
+- Online and offline education
+
+---
 
 ## Round 4: Interview (12th August 2024)
 

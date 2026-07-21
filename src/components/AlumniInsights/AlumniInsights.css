@@ -175,6 +175,38 @@
   transform: translateX(0.2rem);
 }
 
+.alumni-indicators {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.45rem, 1vw, 0.7rem);
+  margin-top: clamp(0.1rem, 0.7vw, 0.45rem);
+}
+
+.alumni-indicator {
+  width: clamp(0.48rem, 0.85vw, 0.6rem);
+  aspect-ratio: 1;
+  border: 1.5px solid rgba(32, 32, 32, 0.72);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.alumni-indicator:hover,
+.alumni-indicator:focus-visible {
+  transform: scale(1.18);
+}
+
+.alumni-indicator.is-active {
+  width: clamp(0.65rem, 1vw, 0.78rem);
+  background: #202020;
+}
+
 @keyframes alumniSlideFromRight {
   from {
     opacity: 0;
