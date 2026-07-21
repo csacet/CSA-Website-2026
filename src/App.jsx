@@ -3,6 +3,7 @@ import Navbar from "./components/home/Navbar/Navbar";
 import Gallery from "./components/home/Gallery/Gallery";
 import Execom from "./components/home/Execom/Execom";
 import Resources from "./components/Resource/Resources";
+import AlumniInsightPost from "./components/AlumniInsights/AlumniInsightPost";
 import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
 import Help from "./components/Help/help";
@@ -10,6 +11,19 @@ import Achievements from "./components/Achievements/achievements";
 import "./styles.css";
 
 function App() {
+  const alumniPostMatch = window.location.pathname.match(
+    /^\/alumni-insights\/([^/]+)\/?$/,
+  );
+
+  if (alumniPostMatch) {
+    return (
+      <main className="page-shell">
+        <Navbar />
+        <AlumniInsightPost slug={decodeURIComponent(alumniPostMatch[1])} />
+      </main>
+    );
+  }
+
   return (
     <main className="page-shell">
       <div className="ambient ambient-a" />

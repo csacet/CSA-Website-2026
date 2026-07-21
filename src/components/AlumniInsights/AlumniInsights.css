@@ -58,7 +58,7 @@
 .alumni-story h2 {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(3rem, 6.4vw, 5.7rem);
+  font-size: clamp(2.1rem, 4.35vw, 3.9rem);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.08em;
@@ -72,9 +72,14 @@
   letter-spacing: -0.08em;
 }
 
+.alumni-role {
+  font-size: clamp(1.1rem, 1.85vw, 1.45rem);
+  font-weight: 800;
+}
+
 .alumni-batch {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .alumni-preview {
@@ -214,7 +219,7 @@
   }
 
   .alumni-story h2 {
-    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    font-size: clamp(1.9rem, 4.8vw, 3.05rem);
   }
 
   .alumni-preview {
@@ -285,7 +290,7 @@
   }
 
   .alumni-story h2 {
-    font-size: clamp(2.2rem, 13vw, 3.8rem);
+    font-size: clamp(1.75rem, 8.8vw, 2.55rem);
   }
 
   .alumni-nav {

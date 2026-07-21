@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "arya-vijayan",
+    "name": "Arya Vijayan",
+    "year": 2025,
+    "company": "Caterpillar",
+    "role": null,
+    "location": "Bangalore",
+    "package": "₹13.24 LPA CTC",
+    "slab": 3,
+    "preview": "The test was conducted on the SHL platform. Each section was timed. Questions cannot be skipped until they are answered, and we cannot return to previous questions...",
+    "markdown": "arya-vijayan.md"
+  },
+  {
+    "slug": "swetha-theresa-george",
+    "name": "Swetha Theresa George",
+    "year": 2024,
+    "company": "Verteil Technologies",
+    "role": null,
+    "location": null,
+    "package": "₹12 LPA",
+    "slab": 2,
+    "preview": "The first round was a written test comprising application-level questions. The assessment was open-book. One question presented a scenario involving the sorting of a 2GB file of random integers where the available RAM was limited to 1GB.  We were asked to devise an algorithm to efficiently handle this situation...",
+    "markdown": "swetha-theresa-george.md"
+  },
+  {
+    "slug": "sooraj-mathew",
+    "name": "Sooraj Mathew",
+    "year": 2024,
+    "company": "Commvault",
+    "role": "SDE / SDET",
+    "location": null,
+    "package": null,
+    "slab": null,
+    "preview": "Commvault’s recruitment process focuses on Cybersecurity, Software Development, and Software Testing. The overall process evaluates candidates based on problem-solving ability, conceptual understanding, and hands-on application — particularly in Operating Systems, Networking, and Secure Systems...",
+    "markdown": "sooraj-mathew.md"
+  },
+  {
+    "slug": "gokul-g-menon",
+    "name": "Gokul G Menon",
+    "year": 2024,
+    "company": "Air India",
+    "role": null,
+    "location": "Kochi",
+    "package": "₹10 LPA (₹8.1 LPA Fixed)",
+    "slab": 2,
+    "preview": "Air India came for placements in early October. This was after the first wave of companies that came during June-August. Air India involved 3 rounds after the initial coding test, first two being technical followed by a managerial HR. Since my intention was to get placed at companies that deal with Machine Learning...",
+    "markdown": "gokul-g-menon.md"
+  },
+  {
+    "slug": "antony-s-john",
+    "name": "Antony S John",
+    "year": null,
+    "company": "Amadeus",
+    "role": "Software Engineer",
+    "location": "Bangalore",
+    "package": "₹11.7 LPA",
+    "slab": 2,
+    "preview": "Amadeus is one of the leading tech companies focused on providing solutions for air travel and logistics. They came to recruit Software Engineers to their Bangalore office. The main two things you are going to hear about the company are they have a very good WLB going on, and that the projects they work on are usually not that challenging...",
+    "markdown": "antony-s-john.md"
+  }
+]

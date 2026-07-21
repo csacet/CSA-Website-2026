@@ -1,32 +1,6 @@
 import { useState } from "react";
+import alumniStories from "./alumini.json";
 import "./AlumniInsights.css";
-
-const alumniStories = [
-  {
-    name: "John Jacob",
-    batch: "Batch of 2024",
-    position: "Product Engineer",
-    company: "Texas Instruments",
-    preview:
-      "The placement process was challenging but rewarding. Consistent practice, project discussions, and guidance from seniors helped me improve my problem-solving and interview skills. Looking back, the experience taught me how much preparation, clarity, and perseverance matter when opportunities finally arrive.",
-  },
-  {
-    name: "Ananya Menon",
-    batch: "Batch of 2023",
-    position: "Software Engineer",
-    company: "Uber",
-    preview:
-      "Working with peers on projects and mock interviews gave me the confidence to approach interviews with clarity. The department community made preparation feel focused and collaborative, and the habit of explaining my decisions clearly helped me stand out during technical conversations.",
-  },
-  {
-    name: "Rahul Nair",
-    batch: "Batch of 2022",
-    position: "Backend Developer",
-    company: "Nutanix",
-    preview:
-      "The strongest advantage was learning how to explain my thinking. Code, projects, and communication came together during the placement journey, and every review helped me understand how to present my work with more structure, confidence, and practical depth.",
-  },
-];
 
 function AlumniInsights() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -120,11 +94,16 @@ function AlumniInsights() {
           >
             <div className="alumni-story-header">
               <h2>{activeStory.name}</h2>
-              <p className="alumni-batch">{activeStory.batch}</p>
+              {activeStory.year && (
+                <p className="alumni-batch">Batch of {activeStory.year}</p>
+              )}
               <p className="alumni-role">{activeStory.company}</p>
             </div>
             <p className="alumni-preview">{activeStory.preview}</p>
-            <a className="alumni-read-more" href="#alumni">
+            <a
+              className="alumni-read-more"
+              href={`/alumni-insights/${activeStory.slug}`}
+            >
               Read more
             </a>
           </article>
