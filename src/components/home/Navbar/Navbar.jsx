@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import csaLogo from "../../../assets/csa_logo.svg";
 import "./Navbar.css";
 
@@ -104,27 +105,27 @@ function Navbar() {
       />
 
       <header className={`topbar ${isScrolled ? "is-scrolled" : ""}`} aria-label="Primary">
-        <a
+        <Link
           className="brand"
-          href="/#home"
+          to="/#home"
           aria-label="Computer Science Association CET home"
         >
           <img src={csaLogo} alt="CSA Logo" className="brand-logo" />
-        </a>
+        </Link>
 
         <nav
           className={`nav-pills ${isMenuOpen ? "is-open" : ""}`}
           aria-label="Section navigation"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
-              href={getSectionHref(item)}
+              to={getSectionHref(item)}
               className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
               onClick={closeMenu}
             >
               {item}
-            </a>
+            </Link>
           ))}
         </nav>
 

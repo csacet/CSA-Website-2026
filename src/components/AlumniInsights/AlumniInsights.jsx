@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import alumniStories from "./alumini.json";
 import "./AlumniInsights.css";
 
@@ -109,12 +110,12 @@ function AlumniInsights() {
               <p className="alumni-role">{activeStory.company}</p>
             </div>
             <p className="alumni-preview">{activeStory.preview}</p>
-            <a
+            <Link
               className="alumni-read-more"
-              href={`/alumni-insights/${activeStory.slug}`}
+              to={`/alumni-insights/${activeStory.slug}`}
             >
               Read more
-            </a>
+            </Link>
 
             <div className="alumni-indicators" aria-label="Alumni story slides">
               {alumniStories.map((story, index) => (
