@@ -2,32 +2,32 @@ import React from "react";
 import "./Placements.css";
 
 const recruiters = [
-  "Zoom",
-  "Nutanix",
-  "Uber",
-  "Gainsight",
-  "Rubrik",
-  "Zendesk",
-  "AppsFlyer",
-  "Okta",
+  "IBM",
+  "Oracle",
+  "EY",
+  "Accenture",
+  "KPMG",
+  "UST",
+  "LTIMindtree",
+  "SOTI",
+  "Schneider Electric",
+  "ARMADA",
+  "CareStack",
+  "South Indian Bank",
 ];
 
 const placementStats = [
   {
-    value: "95%",
-    label: "Placement Rate",
+    value: "166",
+    label: "Offers",
   },
   {
-    value: "33 LPA",
+    value: "14 LPA",
     label: "Highest Package",
   },
   {
-    value: "50+",
-    label: "Recruiters",
-  },
-  {
-    value: "7.5 LPA",
-    label: "Average Package",
+    value: "120",
+    label: "Placed",
   },
 ];
 
