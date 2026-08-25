@@ -11,15 +11,38 @@ const achievementImages = {
 const achievements = achievementsData.map((achievement) => ({
   ...achievement,
   image: achievementImages[achievement.image],
+  imageClass: `achievement-image--${achievement.image
+    .replace(/\.[^/.]+$/, "")
+    .replace(/[^a-z0-9]/gi, "-")
+    .toLowerCase()}`,
 }));
+
+function getStackImages(activeIndex, startOffset) {
+  return Array.from({ length: 3 }, (_, stackIndex) => {
+    const achievementIndex =
+      (activeIndex + startOffset + stackIndex) % achievements.length;
+
+    return achievements[achievementIndex];
+  });
+}
 
 function Achievements(){
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
 
-  const goRight = () => setIndex((index + 1) % achievements.length);
-  const goLeft = () => setIndex((index - 1 + achievements.length) % achievements.length);
+  const goRight = () => {
+    setDirection("next");
+    setIndex((index + 1) % achievements.length);
+  };
+
+  const goLeft = () => {
+    setDirection("prev");
+    setIndex((index - 1 + achievements.length) % achievements.length);
+  };
 
   const current = achievements[index];
+  const leftStackImages = getStackImages(index, 1);
+  const rightStackImages = getStackImages(index, 4);
 
     return (
         <main className ="achievements-page csa-earth-section">
@@ -42,15 +65,25 @@ function Achievements(){
       <section className="carousel">
           {/* decorative cards */}
         <div className="edge-stack edge-stack--left" aria-hidden="true">
-          <img className="edge-card edge-card--1" src={current.image} alt="" />
-          <div className="edge-card edge-card--2" />
-          <div className="edge-card edge-card--3" />
+          {leftStackImages.map((achievement, stackIndex) => (
+            <div
+              className={`edge-card edge-card--${stackIndex + 1} ${achievement.imageClass}`}
+              key={`left-${achievement.id}-${stackIndex}`}
+            >
+              <img className="edge-card-img" src={achievement.image} alt="" />
+            </div>
+          ))}
         </div>
 
         <div className="edge-stack edge-stack--right" aria-hidden="true">
-          <div className="edge-card edge-card--1" />
-          <div className="edge-card edge-card--2" />
-          <div className="edge-card edge-card--3" />
+          {rightStackImages.map((achievement, stackIndex) => (
+            <div
+              className={`edge-card edge-card--${stackIndex + 1} ${achievement.imageClass}`}
+              key={`right-${achievement.id}-${stackIndex}`}
+            >
+              <img className="edge-card-img" src={achievement.image} alt="" />
+            </div>
+          ))}
         </div>
 
         
@@ -60,9 +93,16 @@ function Achievements(){
           </svg>
         </button>
 
-        <div className="carousel-inner">
+        <div
+          className={`carousel-inner carousel-inner--${direction}`}
+          key={current.id}
+        >
             <div className="poster-card">
-              <img src={current.image} alt={current.name} className="poster-img" />
+              <img
+                src={current.image}
+                alt={current.name}
+                className={`poster-img ${current.imageClass}`}
+              />
             </div>
 
           <div className="detail-panel">

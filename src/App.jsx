@@ -60,12 +60,13 @@ function HomePage() {
 
         <HeroArtwork />
       </section>
-      <section id="gallery">
-        <Gallery />
-      </section>
 
       <section id="execom">
         <Execom />
+      </section>
+
+      <section id="gallery">
+        <Gallery />
       </section>
 
       <section id="achievements">
