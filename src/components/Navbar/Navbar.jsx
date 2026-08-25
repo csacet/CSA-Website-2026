@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import csaLogo from "../../../assets/csa_logo.svg";
+import csaLogo from "../../assets/csa_logo.svg";
 import "./Navbar.css";
 
 const navItems = [

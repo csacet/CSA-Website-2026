@@ -1,5 +1,5 @@
 import React from "react";
-import "./help.css";
+import "./Help.css";
 
 const contacts = [
     {

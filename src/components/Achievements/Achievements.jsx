@@ -1,42 +1,17 @@
 import React, { useState } from "react";
-import achievementsImg from "../../assets/achievements1.png";
-import "./achievements.css";
+import achievementsData from "./achievements.json";
+import "./Achievements.css";
 
-const achievements = [
-     {
-    id: 1,
-    name: "Johan Varghese K",
-    category: "Research Paper Publication",
-    description:
-      "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievementsImg,
-  },
-   {
-    id: 2,
-    name: "Jane Doe",
-    category: "Hackathon Winner",
-    description:
-      "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievementsImg,
-  },
-   {
-    id: 3,
-    name: "John Doe",
-    category: "Hackathon Winner",
-    description:
-      "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievementsImg,
-  },
-   {
-    id: 4,
-    name: "Someone",
-    category: "Coding Competition Winner",
-    description:
-      "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievementsImg,
-  },
+const achievementImages = {
+  "achievements1.png": new URL("./assets/achievements1.png", import.meta.url).href,
+  "achievements2.jpeg": new URL("./assets/achievements2.jpeg", import.meta.url).href,
+  "achievements3.jpeg": new URL("./assets/achievements3.jpeg", import.meta.url).href,
+};
 
-];
+const achievements = achievementsData.map((achievement) => ({
+  ...achievement,
+  image: achievementImages[achievement.image],
+}));
 
 function Achievements(){
   const [index, setIndex] = useState(0);
@@ -67,15 +42,15 @@ function Achievements(){
       <section className="carousel">
           {/* decorative cards */}
         <div className="edge-stack edge-stack--left" aria-hidden="true">
-          <img className="edge-card edge-card--1" src={achievementsImg} />
-          <div className="edge-card edge-card--2" src={achievementsImg}/>
-          <div className="edge-card edge-card--3" src={achievementsImg}/>
+          <img className="edge-card edge-card--1" src={current.image} alt="" />
+          <div className="edge-card edge-card--2" />
+          <div className="edge-card edge-card--3" />
         </div>
 
         <div className="edge-stack edge-stack--right" aria-hidden="true">
-          <div className="edge-card edge-card--1" src={achievementsImg}/>
-          <div className="edge-card edge-card--2" src={achievementsImg}/>
-          <div className="edge-card edge-card--3" src={achievementsImg}/>
+          <div className="edge-card edge-card--1" />
+          <div className="edge-card edge-card--2" />
+          <div className="edge-card edge-card--3" />
         </div>
 
         
