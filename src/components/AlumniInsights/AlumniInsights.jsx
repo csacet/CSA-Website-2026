@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import alumniStories from "./alumini.json";
+import alumniStories from "./alumni.json";
 import "./AlumniInsights.css";
 
 function AlumniInsights() {

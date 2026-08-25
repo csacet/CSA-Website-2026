@@ -30,15 +30,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: clamp(0.65rem, 1.8vw, 1.5rem);
   width: 100%;
 }
 
 .edge-stack {
   --stack-w: clamp(8rem, 17vw, 15rem);
+  --poster-ratio: 4 / 5;
   position: absolute;
   top: 50%;
   width: var(--stack-w);
-  height: clamp(14rem, 27vw, 23.75rem);
+  height: clamp(14.5rem, 28vw, 24rem);
   z-index: 0;
 }
 
@@ -52,15 +54,30 @@
 }
 
 .edge-card {
+  --edge-card-width: clamp(7.5rem, 15vw, 13.75rem);
+  --image-scale: 1.02;
   position: absolute;
-  width: clamp(7.5rem, 15vw, 13.75rem);
-  height: clamp(12rem, 22vw, 20rem);
+  width: var(--edge-card-width);
+  aspect-ratio: var(--poster-ratio);
   border-radius: clamp(0.875rem, 2vw, 1.75rem);
   background: #e8e0d6;
+  display: block;
+  overflow: hidden;
   box-shadow:
     0px -8px 17px rgba(0,0,0,0.10),
     0px -31px 31px rgba(0,0,0,0.09),
     0px -69px 42px rgba(0,0,0,0.05);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.edge-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(var(--image-scale));
+  transition: transform 0.55s ease;
 }
 
 
@@ -80,7 +97,7 @@
   background: transparent;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
   color: var(--color-text);
   z-index: 2;
 }
@@ -88,7 +105,15 @@
   width: clamp(0.9rem, 1.5vw, 1.375rem);
   height: clamp(0.9rem, 1.5vw, 1.375rem);
 }
-.arrow-btn:hover { background: var(--color-text); color: #836C5A; }
+.arrow-btn:hover {
+  background: var(--color-text);
+  color: #836C5A;
+  transform: translateY(-2px);
+}
+
+.arrow-btn:active {
+  transform: translateY(0) scale(0.96);
+}
 
 .carousel-track {
   display: flex;
@@ -105,20 +130,41 @@
   align-items: center;
   gap: clamp(1.5rem, 4vw, 3.5rem);
   max-width: min(62.5rem, 85vw);
+  animation: achievement-slide-next 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+
+.carousel-inner--prev {
+  animation-name: achievement-slide-prev;
 }
 
 .poster-card {
+  --poster-ratio: 4 / 5;
   flex-shrink: 0;
   width: clamp(18rem, 28vw, 25rem);
-}
-
-.poster-img {
-  width: 100%; height: auto;
-  display: block;
+  aspect-ratio: var(--poster-ratio);
+  border-radius: clamp(1.1rem, 2vw, 2.25rem);
+  overflow: hidden;
+  background: #e8e0d6;
   filter:
     drop-shadow(0px 15px 33px rgba(0,0,0,0.10))
     drop-shadow(0px 59px 59px rgba(0,0,0,0.09))
     drop-shadow(0px 134px 80px rgba(0,0,0,0.05));
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.poster-img {
+  --image-scale: 1.06;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(var(--image-scale));
+}
+
+.achievement-image--achievements1 {
+  --image-scale: 1.42;
 }
 
 .poster-placeholder {
@@ -132,10 +178,45 @@
   max-width: min(35rem, 90%);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.4rem, 0.8vw, 0.625rem);
+  gap: clamp(0.55rem, 1vw, 0.85rem);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  animation: achievement-text-in 0.55s 0.06s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes achievement-slide-next {
+  from {
+    opacity: 0;
+    transform: translateX(1.4rem) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes achievement-slide-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-1.4rem) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes achievement-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.45rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .detail-name {
-  font-size: clamp(1.5rem, 4.5vw, 4.5rem);
+  font-size: clamp(1.45rem, 4.3vw, 4.3rem);
   font-weight: 700;
   letter-spacing: -0.08em;
   line-height: 1;
@@ -143,14 +224,14 @@
   color: var(--color-text);
 }
 .detail-category {
-  font-size: 1.1rem;
+  font-size: clamp(1.16rem, 1.55vw, 1.35rem);
   font-weight: 600;
   letter-spacing: -0.05em;
   margin: 0;
   color: var(--color-text);
 }
 .detail-desc {
-  font-size: 1rem;
+  font-size: clamp(1.03rem, 1.35vw, 1.16rem);
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
@@ -165,6 +246,10 @@
 
   .arrow-btn {
     align-self: flex-start;
+    transform: translateY(clamp(0.5rem, 4vw, 2.5rem));
+  }
+
+  .arrow-btn:hover {
     transform: translateY(clamp(0.5rem, 4vw, 2.5rem));
   }
 
@@ -199,5 +284,19 @@
   .achievement-heading {
     --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
     padding-bottom: clamp(0.75rem, 1.2vw, 1.1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-inner,
+  .detail-panel {
+    animation: none;
+  }
+
+  .arrow-btn,
+  .edge-card,
+  .edge-card-img,
+  .poster-card {
+    transition: none;
   }
 }

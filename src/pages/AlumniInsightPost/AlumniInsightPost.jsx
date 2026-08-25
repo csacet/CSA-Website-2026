@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import alumniStories from "./alumini.json";
+import alumniStories from "../../components/AlumniInsights/alumni.json";
 import "./AlumniInsightPost.css";
 
-const markdownFiles = import.meta.glob("./content/*.md", {
+const markdownFiles = import.meta.glob("../../components/AlumniInsights/content/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
@@ -15,7 +15,9 @@ function getAlumniStory(slug) {
 }
 
 function getMarkdown(markdownFile) {
-  return markdownFiles[`./content/${markdownFile}`] ?? "";
+  return (
+    markdownFiles[`../../components/AlumniInsights/content/${markdownFile}`] ?? ""
+  );
 }
 
 function AlumniInsightPost({ slug }) {

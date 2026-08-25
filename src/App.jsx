@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation, useParams } from "react-router-dom";
-import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
-import Navbar from "./components/home/Navbar/Navbar";
-import Gallery from "./components/home/Gallery/Gallery";
-import Execom from "./components/home/Execom/Execom";
-import Resources from "./components/Resource/Resources";
-import AlumniInsightPost from "./components/AlumniInsights/AlumniInsightPost";
+import HeroArtwork from "./components/HeroArtwork/HeroArtwork";
+import Navbar from "./components/Navbar/Navbar";
+import Gallery from "./components/Gallery/Gallery";
+import Execom from "./components/Execom/Execom";
+import Resources from "./components/Resources/Resources";
+import AlumniInsightPost from "./pages/AlumniInsightPost/AlumniInsightPost";
 import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
-import Help from "./components/Help/help";
-import Achievements from "./components/Achievements/achievements";
+import Help from "./components/Help/Help";
+import Achievements from "./components/Achievements/Achievements";
 import "./styles.css";
 
 function ScrollToHash() {
@@ -60,12 +60,13 @@ function HomePage() {
 
         <HeroArtwork />
       </section>
-      <section id="gallery">
-        <Gallery />
-      </section>
 
       <section id="execom">
         <Execom />
+      </section>
+
+      <section id="gallery">
+        <Gallery />
       </section>
 
       <section id="achievements">

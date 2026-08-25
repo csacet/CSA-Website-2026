@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Johan Varghese K",
+    "category": "Research Paper Publication",
+    "description": "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
+    "image": "achievements1.png"
+  },
+  {
+    "id": 2,
+    "name": "Navaneeth V Sankar",
+    "category": "Research Paper Publication",
+    "description": "We are pleased to share that Navaneeth V Sankar has published his research titled \"A Reinforcement Learning Approach to Contention-Aware Co-Scheduling in Heterogeneous Cyber-Physical Systems.\"",
+    "image": "achievements2.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Sreehari Vinayan",
+    "category": "Hackathon Winner",
+    "description": "The CS Association is proud to congratulate Sreehari Vinayan (CSE ’28) on being selected as a winner of Code for Good (CFG), the flagship hackathon conducted by JPMorgan Chase at Bangalore! ",
+    "image": "achievements3.jpeg"
+  }
+]
