@@ -2,11 +2,17 @@ import styles from './Resources.module.css';
 import { useState } from "react";
 
 const resources = [
-  { name: 'Academics', subResources: [{ name: 'Syllabus', link: '#' }, { name: 'Notes', link: '#' }, { name: 'PYQs', link: '#' }] },
+  { name: 'Academics', subResources: [{ name: 'Notes', children: [{ name: 'Year 1', link: 'https://drive.google.com/drive/folders/1upBa26qyFiXwrJ8fSnwcl5NPlDFmzZc6?usp=drive_link' }, { name: 'Year 2', link: 'https://drive.google.com/drive/folders/1PA63qS4y6VP_1Hj7_jf1t0ze2O2XCrjR?usp=drive_link' }, { name: 'Year 3', link: 'https://drive.google.com/drive/folders/1WyXtpGWIneR3RyiEBZ3SOydcvSlUpv4o?usp=drive_link' }] }, { name: 'Gate Prep', link: 'https://drive.google.com/drive/folders/1rj0kTkSZ8j_g1oGFlKQqR7J_i-bbdhvS' }, { name: 'Study Help Guide', link: 'https://docs.google.com/document/d/1TAe7Kq8E2Xv7J4ITHQ0IVUfYA5fHqekZ/edit?usp=drive_link&ouid=103309018449688798459&rtpof=true&sd=true' }] },
   { name: 'Skill Development', subResources: [{ name: 'Coding', link: '#' }, { name: 'Designing', link: '#' }, { name: 'Public Speaking', link: '#' }] },
 ]
 
 export default function Resources() {
+  const [openNotes, setOpenNotes] = useState(false);
+
+  const toggleNotes = () => {
+    setOpenNotes((currentValue) => !currentValue);
+  };
+
   return (
     <main className='container csa-earth-section'>
       <section className='title-container'>
@@ -31,12 +37,9 @@ export default function Resources() {
 
       <section className={styles['resources-section']}>
         {resources.map((resource, index) => (
-          <div className={styles['resource-card']} key={index}>
+          <div key={index}>
 
-            <div
-              className={styles['resource-header']}
-              onClick={() => toggleResource(index)}
-            >
+            <div className={styles['resource-header']}>
               <h2 className={styles['resource-name']}>
                 {index + 1}. {resource.name}
               </h2>
@@ -44,20 +47,57 @@ export default function Resources() {
 
               <div className={styles['sub-resources']}>
                 {resource.subResources.map((subResource, subIndex) => (
-                  <div
-                    className={styles['sub-resource-item']}
-                    key={subIndex}
-                  >
-                    <span className={styles.dot}></span>
+                  <div className={styles['sub-resource-group']} key={subIndex}>
+                    {subResource.children ? (
+                      <>
+                        <button
+                          type="button"
+                          className={styles['sub-resource-toggle']}
+                          onClick={toggleNotes}
+                          aria-expanded={openNotes}
+                        >
+                          {/* <span className={styles.dot}></span> */}
+                           <span className={styles['toggle-icon']} aria-hidden="true">
+                            {openNotes ? '▾' : '▸'}
+                          </span>
+                          <span className={styles['sub-resource-name']}>
+                            {subResource.name}
+                          </span>
+                        
+                        </button>
 
-                    <a
-                      href={subResource.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles['sub-resource-name']}
-                    >
-                      {subResource.name}
-                    </a>
+                        {openNotes && (
+                          <div className={styles['nested-resources']}>
+                            {subResource.children.map((yearResource, yearIndex) => (
+                              <div className={styles['nested-resource-item']} key={yearIndex}>
+                                <span className={styles['nested-dot']}></span>
+                                <a
+                                  href={yearResource.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles['nested-resource-name']}
+                                >
+                                  {yearResource.name}
+                                </a>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className={styles['sub-resource-item']}>
+                        <span className={styles.dot}></span>
+
+                        <a
+                          href={subResource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles['sub-resource-name']}
+                        >
+                          {subResource.name}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
