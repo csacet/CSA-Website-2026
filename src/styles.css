@@ -209,6 +209,10 @@ section[id] {
   pointer-events: none;
 }
 
+.csa-heading-disk {
+  display: none;
+}
+
 .csa-heading-dino {
   --csa-heading-dino-size: clamp(1.15rem, 3.2vw, 3.5rem);
   width: var(--csa-heading-dino-size);
