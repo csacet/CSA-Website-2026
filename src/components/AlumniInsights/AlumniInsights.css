@@ -1,7 +1,3 @@
-.alumni-heading .csa-section-heading-line:first-child {
-  transform: translateX(0.02em) !important;
-}
-
 .alumni-section {
   z-index: 1;
 }
