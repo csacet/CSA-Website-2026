@@ -7,6 +7,11 @@
   background-color: #3a2a32;
 }
 
+.execom-heading {
+  --csa-earth-text: #f8f6f4;
+  margin-bottom: clamp(1.875rem, 4vw, 3.75rem);
+}
+
 .execom-title-container {
   display: flex;
   flex-direction: column;
@@ -243,10 +248,24 @@
   }
 }
 
+@media (max-width: 980px) {
+  .execom-heading {
+    --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
+    --csa-heading-line-top: -0.115em;
+    --csa-heading-line-bottom: 0.45em;
+  }
+}
+
 @media (max-width: 640px) {
   .execom-section {
     min-height: auto;
     padding: 40px 0;
+  }
+
+  .execom-heading {
+    --csa-heading-size: clamp(3.05rem, 15vw, 5.5rem);
+    --csa-heading-line-top: -0.115em;
+    --csa-heading-line-bottom: 0.45em;
   }
 
   .execom-title-container {
