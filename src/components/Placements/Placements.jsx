@@ -24,8 +24,8 @@ const placementStats = [
   },
   {
     value: "14 LPA",
-    target: 14,
     label: "Highest Package",
+    animate: false,
   },
   {
     value: "120+",
@@ -45,7 +45,7 @@ function PlacementCounter({ value, target, shouldCount }) {
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
 
-    const duration = 5000;
+    const duration = 4000;
     const startTime = performance.now();
     let animationFrame;
 
@@ -155,11 +155,13 @@ function Placements() {
           {placementStats.map((stat) => (
             <article className="placement-stat" key={stat.label}>
               <strong>
-                <PlacementCounter
-                  shouldCount={hasEnteredViewport}
-                  target={stat.target}
-                  value={stat.value}
-                />
+                {stat.animate === false ? stat.value : (
+                  <PlacementCounter
+                    shouldCount={hasEnteredViewport}
+                    target={stat.target}
+                    value={stat.value}
+                  />
+                )}
               </strong>
               <span>{stat.label}</span>
             </article>
