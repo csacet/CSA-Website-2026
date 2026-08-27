@@ -8,11 +8,7 @@ A responsive landing page for the Computer Science Association at CET.
 - **Framework:** React 18
 - **Build Tool:** Vite
 - **Styling:** Vanilla CSS
-- **Deployment:** GitHub Pages
-
-## Features
-- **Responsive Design:** Optimized for desktop and mobile views.
-- **Interactive UI:** Smooth navigation with glassmorphism-inspired pills.
+- **Deployment:** Vercel
 
 ## Getting Started
 
