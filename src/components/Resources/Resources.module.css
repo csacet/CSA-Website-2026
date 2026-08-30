@@ -4,6 +4,7 @@
   --text-hover: #40362e;
   --resources-bg: var(--csa-earth-bg);
   --resources-bg-secondary: #202020;
+  --resource-edge-gap: 20px;
 
   --sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -46,8 +47,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  border: 0;
   background-color: var(--resources-bg-secondary);
   margin-bottom: 2px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
 }
 
 .resource-name {
@@ -56,7 +62,7 @@ a {
   background-color: var(--resources-bg-secondary);
   font-weight: 700;
   font-style: bold;
-  padding-left: 20px;
+  padding-left: var(--resource-edge-gap);
   font-size: 23px;
   margin: 5px;
   letter-spacing: -0.07em;
@@ -118,7 +124,7 @@ a {
 .nested-resource-name {
   font-family: var(--sans);
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: regular;
   font-size: 18px;
   font-style: bold;
 }
@@ -137,6 +143,27 @@ a {
   flex-shrink: 0;
 }
 
+.toggle-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%;
+  background: transparent;
+  margin-right: var(--resource-edge-gap);
+}
+
+.toggle-icon-main {
+  display: inline-block;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  transform: translateY(-1px);
+}
+
 .toggle-icon {
   font-size: 30px;
   color: var(--text-primary);
@@ -145,9 +172,10 @@ a {
 .sub-resource-name {
   font-family: var(--sans);
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: regular;
   font-size: 18px;
   font-style: bold;
+  letter-spacing: -0.07em;
 }
 
 .sub-resource-name:hover {
@@ -165,13 +193,17 @@ a {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --resource-edge-gap: 10%;
+  }
+
   .resources-heading {
     --csa-heading-size: clamp(5rem, 10vw, 6.25rem);
   }
 
   .resource-name {
     font-size: 37px;
-    padding-left: 10%;
+    padding-left: var(--resource-edge-gap);
   }
 
   .sub-resource-item {
