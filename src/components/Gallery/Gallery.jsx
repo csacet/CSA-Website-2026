@@ -2,14 +2,17 @@ import './Gallery.css';
 import { useState, useEffect, useCallback } from 'react';
 
 const galleryImages = [
-  { id: 1, alt: 'Group photo 1' },
-  { id: 2, alt: 'Certificate presentation' },
-  { id: 3, alt: 'Team gathering' },
-  { id: 4, alt: 'Award ceremony' },
-  { id: 5, alt: 'Outdoor event' },
-  { id: 6, alt: 'Workshop session' },
-  { id: 7, alt: 'Conference' },
-  { id: 8, alt: 'Team celebration' },
+  { id: 1, alt: 'CSA Event 1', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.44 AM (1).jpeg' },
+  { id: 2, alt: 'CSA Event 2', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.44 AM.jpeg' },
+  { id: 3, alt: 'CSA Event 3', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.45 AM (1).jpeg' },
+  { id: 4, alt: 'CSA Event 4', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.45 AM (2).jpeg' },
+  { id: 5, alt: 'CSA Event 5', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.45 AM.jpeg' },
+  { id: 6, alt: 'CSA Event 6', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.46 AM (1).jpeg' },
+  { id: 7, alt: 'CSA Event 7', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.46 AM.jpeg' },
+  { id: 8, alt: 'CSA Event 8', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.55 AM.jpeg' },
+  { id: 9, alt: 'CSA Event 9', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.56 AM (1).jpeg' },
+  { id: 10, alt: 'CSA Event 10', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.56 AM (2).jpeg' },
+  { id: 11, alt: 'CSA Event 11', src: '/gallery/WhatsApp Image 2026-08-16 at 11.11.56 AM.jpeg' },
 ];
 
 export default function Gallery() {
@@ -68,21 +71,7 @@ export default function Gallery() {
               onClick={() => openLightbox(img.id - 1)}
             >
               <div className="gallery-image-placeholder">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id={`grad-${img.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#5a4a52" />
-                      <stop offset="100%" stopColor="#4a3a42" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="400" height="300" fill={`url(#grad-${img.id})`}/>
-                  <rect x="20" y="20" width="360" height="260" rx="12" fill="#6b5c63" opacity="0.6"/>
-                  <circle cx="120" cy="120" r="40" fill="#7a6b72"/>
-                  <circle cx="200" cy="100" r="35" fill="#8a7b82"/>
-                  <circle cx="280" cy="120" r="40" fill="#7a6b72"/>
-                  <circle cx="150" cy="180" r="38" fill="#8a7b82"/>
-                  <circle cx="250" cy="180" r="38" fill="#7a6b72"/>
-                </svg>
+                <img src={img.src} alt={img.alt} loading="lazy" />
               </div>
             </div>
           ))}
@@ -112,29 +101,7 @@ export default function Gallery() {
               </button>
 
               <div className="lightbox-image-container">
-                <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" className="lightbox-image">
-                  <defs>
-                    <linearGradient id="lb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#5a4a52" />
-                      <stop offset="100%" stopColor="#4a3a42" />
-                    </linearGradient>
-                    <linearGradient id="lb-circle-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#8a7b82" />
-                      <stop offset="100%" stopColor="#7a6b72" />
-                    </linearGradient>
-                    <linearGradient id="lb-circle-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#9a8b92" />
-                      <stop offset="100%" stopColor="#8a7b82" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="1200" height="800" fill="url(#lb-grad)"/>
-                  <rect x="40" y="40" width="1120" height="720" rx="16" fill="#6b5c63" opacity="0.4"/>
-                  <circle cx="240" cy="280" r="100" fill="url(#lb-circle-1)"/>
-                  <circle cx="520" cy="240" r="85" fill="url(#lb-circle-2)"/>
-                  <circle cx="800" cy="280" r="100" fill="url(#lb-circle-1)"/>
-                  <circle cx="380" cy="520" r="90" fill="url(#lb-circle-2)"/>
-                  <circle cx="680" cy="520" r="90" fill="url(#lb-circle-1)"/>
-                </svg>
+                <img src={currentImage.src} alt={currentImage.alt} className="lightbox-image" />
               </div>
 
               <button className="lightbox-nav lightbox-nav-next" onClick={goToNext} aria-label="Next image">
