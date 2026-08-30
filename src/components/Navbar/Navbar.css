@@ -253,37 +253,53 @@
     max-width: none;
     min-width: 0;
     justify-content: flex-start;
-    padding: 1.1rem 1.4rem;
-    font-size: 1.05rem;
+    padding: 0.85rem 1.2rem 0.85rem 1.4rem;
+    font-size: 1.08rem;
+    font-weight: 700;
     background: transparent;
-    border: 1.5px solid rgba(248, 246, 244, 0.4);
-    border-radius: 12px;
+    border: none;
+    border-radius: 0;
+    border-left: 3px solid transparent;
     box-shadow: none;
-    transition: all 0.2s ease;
+    color: rgba(248, 246, 244, 0.65);
+    letter-spacing: 0.01em;
+    transition:
+      color 0.18s ease,
+      border-left-color 0.18s ease,
+      padding-left 0.18s ease;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
 
   .nav-pill:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(248, 246, 244, 0.7);
-    transform: translateX(5px);
+    background: transparent;
+    border-color: transparent;
+    border-left-color: rgba(248, 246, 244, 0.4);
+    color: rgba(248, 246, 244, 0.92);
+    padding-left: 1.8rem;
+    transform: none;
     backdrop-filter: none;
+    box-shadow: none;
   }
 
   .nav-pill.active {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
+    background: transparent;
+    color: var(--text);
+    border: none;
+    border-left: 3px solid var(--text);
+    font-weight: 800;
     box-shadow: none;
     transform: none;
     backdrop-filter: none;
   }
 
   .nav-pill.active:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    transform: translateX(5px);
+    background: transparent;
+    border-color: transparent;
+    border-left-color: var(--text);
+    color: #ffffff;
+    padding-left: 1.8rem;
+    transform: none;
   }
 }
 
