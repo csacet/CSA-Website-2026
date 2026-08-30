@@ -1,4 +1,4 @@
-import heroIcon from "../../../assets/hero_icon.webp";
+import heroIcon from "../../assets/hero_icon.webp";
 import "./HeroArtwork.css";
 
 function HeroArtwork() {
@@ -16,4 +16,3 @@ function HeroArtwork() {
 }
 
 export default HeroArtwork;
-

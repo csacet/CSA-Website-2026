@@ -1,7 +1,3 @@
-.alumni-heading .csa-section-heading-line:first-child {
-  transform: translateX(0.02em) !important;
-}
-
 .alumni-section {
   z-index: 1;
 }
@@ -22,40 +18,25 @@
 .alumni-carousel {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(17rem, 27rem) minmax(19rem, 31rem);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   justify-content: center;
-  gap: clamp(2.6rem, 6vw, 7.2rem);
-  width: min(100% - clamp(4rem, 13vw, 14rem), 72rem);
+  width: min(100% - clamp(4rem, 13vw, 14rem), 56rem);
   margin: 0 auto;
-}
-
-.alumni-portrait-wrap {
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-
-.alumni-portrait {
-  display: grid;
-  width: clamp(15.5rem, 26vw, 27.5rem);
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background: #d9d9d9;
-  overflow: hidden;
-}
-
-.alumni-avatar {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .alumni-story {
   display: grid;
-  gap: clamp(1.2rem, 3vw, 2.5rem);
+  gap: clamp(1.05rem, 2vw, 1.65rem);
+  justify-items: center;
   color: #202020;
+  text-align: center;
+}
+
+.alumni-story-header {
+  display: grid;
+  gap: clamp(0.35rem, 0.8vw, 0.65rem);
+  justify-items: center;
 }
 
 .alumni-slide-item {
@@ -73,26 +54,37 @@
 .alumni-story h2 {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-  font-size: clamp(2.6rem, 5vw, 4.1rem);
+  font-size: clamp(2.1rem, 4.35vw, 3.9rem);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.08em;
 }
 
+.alumni-batch,
 .alumni-role {
-  margin: 0.55rem 0 0;
+  margin: 0;
   font-size: clamp(0.95rem, 1.45vw, 1.2rem);
   font-weight: 600;
   letter-spacing: -0.08em;
 }
 
-.alumni-story blockquote {
-  max-width: 30rem;
+.alumni-role {
+  font-size: clamp(1.1rem, 1.85vw, 1.45rem);
+  font-weight: 800;
+}
+
+.alumni-batch {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.alumni-preview {
+  max-width: 42rem;
   margin: 0;
   color: #000;
-  font-size: clamp(0.98rem, 1.45vw, 1.25rem);
+  font-size: clamp(1.08rem, 1.75vw, 1.42rem);
   font-weight: 600;
-  line-height: 1.28;
+  line-height: 1.34;
 }
 
 .alumni-nav {
@@ -160,7 +152,7 @@
 }
 
 .alumni-read-more {
-  justify-self: start;
+  justify-self: center;
   width: max-content;
   border-bottom: 2px solid #202020;
   color: #202020;
@@ -177,6 +169,38 @@
 .alumni-read-more:focus-visible {
   opacity: 0.72;
   transform: translateX(0.2rem);
+}
+
+.alumni-indicators {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.45rem, 1vw, 0.7rem);
+  margin-top: clamp(0.1rem, 0.7vw, 0.45rem);
+}
+
+.alumni-indicator {
+  width: clamp(0.48rem, 0.85vw, 0.6rem);
+  aspect-ratio: 1;
+  border: 1.5px solid rgba(32, 32, 32, 0.72);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.alumni-indicator:hover,
+.alumni-indicator:focus-visible {
+  transform: scale(1.18);
+}
+
+.alumni-indicator.is-active {
+  width: clamp(0.65rem, 1vw, 0.78rem);
+  background: #202020;
 }
 
 @keyframes alumniSlideFromRight {
@@ -215,43 +239,46 @@
   }
 
   .alumni-carousel {
-    grid-template-columns: minmax(14rem, 21rem) minmax(18rem, 26rem);
-    gap: clamp(1.7rem, 4vw, 3rem);
-    width: min(100% - clamp(3rem, 8vw, 6rem), 55rem);
-  }
-
-  .alumni-portrait {
-    width: clamp(14rem, 31vw, 21rem);
+    width: min(100% - clamp(3rem, 8vw, 6rem), 48rem);
   }
 
   .alumni-story {
-    gap: clamp(1rem, 2vw, 1.6rem);
+    gap: clamp(0.95rem, 2vw, 1.4rem);
   }
 
   .alumni-story h2 {
-    font-size: clamp(2.25rem, 4.6vw, 3.4rem);
+    font-size: clamp(1.9rem, 4.8vw, 3.05rem);
   }
 
-  .alumni-story blockquote {
-    max-width: 27rem;
-    font-size: clamp(0.95rem, 1.9vw, 1.1rem);
+  .alumni-preview {
+    max-width: 38rem;
+    font-size: clamp(1rem, 2.1vw, 1.18rem);
+  }
+
+  .alumni-story {
+    padding-inline: clamp(3.75rem, 8vw, 5.25rem);
+  }
+
+  .alumni-nav-prev {
+    left: 0;
+  }
+
+  .alumni-nav-next {
+    right: 0;
   }
 }
 
 @media (max-width: 760px) {
   .alumni-carousel {
-    grid-template-columns: 1fr;
-    gap: 1.7rem;
     width: min(100% - 2rem, 42rem);
   }
 
   .alumni-story {
-    justify-items: center;
-    gap: 1.35rem;
-    text-align: center;
+    gap: 1.2rem;
+    padding-inline: clamp(3.25rem, 10vw, 4.4rem);
   }
 
-  .alumni-story blockquote {
+  .alumni-preview {
     max-width: 34rem;
   }
 
@@ -260,7 +287,7 @@
   }
 
   .alumni-nav {
-    top: clamp(8rem, 27vw, 16rem);
+    top: 50%;
   }
 
   .alumni-nav-prev {
@@ -287,16 +314,15 @@
   }
 
   .alumni-carousel {
-    width: min(100% - 1.5rem, 28rem);
+    width: min(100% - 0.75rem, 30rem);
   }
 
-  .alumni-portrait {
-    width: min(74vw, 19rem);
+  .alumni-story h2 {
+    font-size: clamp(1.75rem, 8.8vw, 2.55rem);
   }
 
   .alumni-nav {
-    width: 2.7rem;
-    top: clamp(7rem, 31vw, 10rem);
+    width: clamp(2.3rem, 11vw, 2.7rem);
     font-size: 2rem;
   }
 }

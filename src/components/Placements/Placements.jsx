@@ -1,35 +1,70 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Placements.css";
 
 const recruiters = [
-  "Zoom",
-  "Nutanix",
-  "Uber",
-  "Gainsight",
-  "Rubrik",
-  "Zendesk",
-  "AppsFlyer",
-  "Okta",
+  "IBM",
+  "Oracle",
+  "EY",
+  "Accenture",
+  "KPMG",
+  "UST",
+  "LTIMindtree",
+  "SOTI",
+  "Schneider Electric",
+  "ARMADA",
+  "CareStack",
+  "South Indian Bank",
 ];
 
 const placementStats = [
   {
-    value: "95%",
-    label: "Placement Rate",
+    value: "166+",
+    target: 166,
+    label: "Offers",
   },
   {
-    value: "33 LPA",
+    value: "14 LPA",
     label: "Highest Package",
+    animate: false,
   },
   {
-    value: "50+",
-    label: "Recruiters",
-  },
-  {
-    value: "7.5 LPA",
-    label: "Average Package",
+    value: "120+",
+    target: 120,
+    label: "Placed",
   },
 ];
+
+function PlacementCounter({ value, target, shouldCount }) {
+  const [count, setCount] = useState(() => (
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ? target : 0
+  ));
+  const suffix = value.replace(/^\d+/, "");
+
+  useEffect(() => {
+    if (!shouldCount) return undefined;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    const duration = 4000;
+    const startTime = performance.now();
+    let animationFrame;
+
+    const updateCount = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easedProgress = 1 - (1 - progress) ** 3;
+      setCount(Math.round(target * easedProgress));
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(updateCount);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(updateCount);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [shouldCount, target]);
+
+  return <>{count}{suffix}</>;
+}
 
 function RecruiterTrack() {
   return (
@@ -48,8 +83,33 @@ function RecruiterTrack() {
 }
 
 function Placements() {
+  const sectionRef = useRef(null);
+  const [hasEnteredViewport, setHasEnteredViewport] = useState(() => (
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ));
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        setHasEnteredViewport(true);
+        observer.unobserve(entry.target);
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <main className="placements-section csa-earth-section">
+    <main className="placements-section csa-earth-section" ref={sectionRef}>
       <div className="placements-content">
         <div className="csa-section-heading placements-heading">
           <svg
@@ -94,7 +154,15 @@ function Placements() {
         <div className="placement-stats">
           {placementStats.map((stat) => (
             <article className="placement-stat" key={stat.label}>
-              <strong>{stat.value}</strong>
+              <strong>
+                {stat.animate === false ? stat.value : (
+                  <PlacementCounter
+                    shouldCount={hasEnteredViewport}
+                    target={stat.target}
+                    value={stat.value}
+                  />
+                )}
+              </strong>
               <span>{stat.label}</span>
             </article>
           ))}

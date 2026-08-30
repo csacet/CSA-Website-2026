@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import csaLogo from "../../../assets/csa_logo.svg";
+import { Link } from "react-router-dom";
+import csaLogo from "../../assets/csa_logo.svg";
 import "./Navbar.css";
 
 const navItems = [
@@ -9,6 +10,8 @@ const navItems = [
   "Placements",
   "Resources",
 ];
+
+const getSectionHref = (item) => `/#${item.toLowerCase()}`;
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,27 +105,27 @@ function Navbar() {
       />
 
       <header className={`topbar ${isScrolled ? "is-scrolled" : ""}`} aria-label="Primary">
-        <a
+        <Link
           className="brand"
-          href="#"
+          to="/#home"
           aria-label="Computer Science Association CET home"
         >
           <img src={csaLogo} alt="CSA Logo" className="brand-logo" />
-        </a>
+        </Link>
 
         <nav
           className={`nav-pills ${isMenuOpen ? "is-open" : ""}`}
           aria-label="Section navigation"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              to={getSectionHref(item)}
               className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
               onClick={closeMenu}
             >
               {item}
-            </a>
+            </Link>
           ))}
         </nav>
 

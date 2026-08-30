@@ -1,101 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import alumniStories from "./alumni.json";
 import "./AlumniInsights.css";
-
-const alumniStories = [
-  {
-    name: "John Jacob",
-    role: "Product Engineer, Texas Instruments",
-    quote:
-      "The placement process was challenging but rewarding. Consistent practice and guidance from seniors helped me improve my problem-solving and interview skills. The experience taught me the importance of preparation and perseverance.",
-    initials: "JJ",
-  },
-  {
-    name: "Ananya Menon",
-    role: "Software Engineer, Uber",
-    quote:
-      "Working with peers on projects and mock interviews gave me the confidence to approach interviews with clarity. The department community made preparation feel focused and collaborative.",
-    initials: "AM",
-  },
-  {
-    name: "Rahul Nair",
-    role: "Backend Developer, Nutanix",
-    quote:
-      "The strongest advantage was learning how to explain my thinking. Code, projects, and communication came together during the placement journey.",
-    initials: "RN",
-  },
-];
-
-function AlumniAvatar() {
-  return (
-    <svg
-      className="alumni-avatar"
-      viewBox="0 0 320 320"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <circle cx="160" cy="160" r="160" fill="#D9D9D9" />
-      <path
-        d="M79 300C91 246 117 220 161 220C206 220 232 247 244 300H79Z"
-        fill="#4B4E58"
-      />
-      <path
-        d="M116 241C126 225 140 217 160 217C181 217 196 225 205 241L194 310H126L116 241Z"
-        fill="#F7F7F7"
-      />
-      <path
-        d="M109 246L129 218L154 237L126 291L109 246Z"
-        fill="#565A66"
-      />
-      <path
-        d="M211 246L192 218L166 237L194 291L211 246Z"
-        fill="#565A66"
-      />
-      <path
-        d="M119 132C116 166 121 202 160 205C199 202 204 166 201 132C199 101 181 82 160 82C139 82 121 101 119 132Z"
-        fill="#FFD1A8"
-      />
-      <path
-        d="M119 136C114 126 106 130 106 143C106 156 115 164 123 163L119 136Z"
-        fill="#F2B98F"
-      />
-      <path
-        d="M201 136C206 126 214 130 214 143C214 156 205 164 197 163L201 136Z"
-        fill="#F2B98F"
-      />
-      <path
-        d="M120 120C127 93 146 72 171 75C177 76 181 80 186 82C206 82 219 97 217 120C215 141 207 153 199 162C199 145 197 131 191 119C177 123 162 116 151 103C143 113 132 116 120 120Z"
-        fill="#202020"
-      />
-      <path
-        d="M134 148C142 144 150 144 157 149"
-        stroke="#202020"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M177 149C185 144 193 144 200 148"
-        stroke="#202020"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <circle cx="146" cy="158" r="5" fill="#202020" />
-      <circle cx="188" cy="158" r="5" fill="#202020" />
-      <path
-        d="M161 166C158 177 154 184 150 188C156 191 164 191 170 187"
-        stroke="#D99365"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M142 197C153 204 170 204 181 197"
-        stroke="#C87552"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 
 function AlumniInsights() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -112,6 +18,15 @@ function AlumniInsights() {
   const showNextStory = () => {
     setSlideDirection("next");
     setActiveIndex((currentIndex) => (currentIndex + 1) % alumniStories.length);
+  };
+
+  const showStory = (storyIndex) => {
+    if (storyIndex === activeIndex) {
+      return;
+    }
+
+    setSlideDirection(storyIndex > activeIndex ? "next" : "previous");
+    setActiveIndex(storyIndex);
   };
 
   return (
@@ -183,27 +98,39 @@ function AlumniInsights() {
             </svg>
           </button>
 
-          <div
-            className="alumni-portrait-wrap alumni-slide-item"
-            key={`portrait-${activeStory.name}`}
-          >
-            <div className="alumni-portrait" aria-hidden="true">
-              <AlumniAvatar />
-            </div>
-          </div>
-
           <article
             className="alumni-story alumni-slide-item"
             key={`story-${activeStory.name}`}
           >
-            <div>
+            <div className="alumni-story-header">
               <h2>{activeStory.name}</h2>
-              <p className="alumni-role">{activeStory.role}</p>
+              {activeStory.year && (
+                <p className="alumni-batch">Batch of {activeStory.year}</p>
+              )}
+              <p className="alumni-role">{activeStory.company}</p>
             </div>
-            <blockquote>“{activeStory.quote}”</blockquote>
-            <a className="alumni-read-more" href="#alumni">
+            <p className="alumni-preview">{activeStory.preview}</p>
+            <Link
+              className="alumni-read-more"
+              to={`/alumni-insights/${activeStory.slug}`}
+            >
               Read more
-            </a>
+            </Link>
+
+            <div className="alumni-indicators" aria-label="Alumni story slides">
+              {alumniStories.map((story, index) => (
+                <button
+                  className={`alumni-indicator${
+                    index === activeIndex ? " is-active" : ""
+                  }`}
+                  type="button"
+                  key={story.slug}
+                  onClick={() => showStory(index)}
+                  aria-label={`Show ${story.name}'s alumni insight`}
+                  aria-current={index === activeIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
           </article>
 
           <button
