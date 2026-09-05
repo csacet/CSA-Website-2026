@@ -1,19 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import "./Placements.css";
+import accentureLogo from "./assets/accenture.png";
+import armadaLogo from "./assets/armada.png";
+import carestackLogo from "./assets/carestack.png";
+import eyLogo from "./assets/ey.png";
+import ibmLogo from "./assets/ibm.png";
+import kpmgLogo from "./assets/kpmg.png";
+import oracleLogo from "./assets/oracle.png";
+import schneiderElectricLogo from "./assets/schneider-electric.png";
+import sotiLogo from "./assets/soti.png";
+import southIndianBankLogo from "./assets/south-indian-bank.png";
+import ustLogo from "./assets/ust.png";
 
 const recruiters = [
-  "IBM",
-  "Oracle",
-  "EY",
-  "Accenture",
-  "KPMG",
-  "UST",
-  "LTIMindtree",
-  "SOTI",
-  "Schneider Electric",
-  "ARMADA",
-  "CareStack",
-  "South Indian Bank",
+  { name: "Oracle", logo: oracleLogo },
+  { name: "UST", logo: ustLogo },
+  { name: "EY", logo: eyLogo },
+  { name: "Schneider Electric", logo: schneiderElectricLogo },
+  { name: "CareStack", logo: carestackLogo },
+  { name: "IBM", logo: ibmLogo },
+  { name: "KPMG", logo: kpmgLogo },
+  { name: "SOTI", logo: sotiLogo },
+  { name: "South Indian Bank", logo: southIndianBankLogo },
+  { name: "Accenture", logo: accentureLogo },
+  { name: "ARMADA", logo: armadaLogo },
 ];
 
 const placementStats = [
@@ -72,8 +82,8 @@ function RecruiterTrack() {
       {[0, 1].map((group) => (
         <div className="recruiter-group" key={group}>
           {recruiters.map((recruiter) => (
-            <span className="recruiter-logo" key={`${recruiter}-${group}`}>
-              {recruiter}
+            <span className="recruiter-logo" key={`${recruiter.name}-${group}`}>
+              <img alt="" src={recruiter.logo} />
             </span>
           ))}
         </div>
