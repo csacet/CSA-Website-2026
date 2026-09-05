@@ -90,15 +90,15 @@ function HomePage() {
           <Placements />
           <AlumniInsights />
         </section>
+
+        <section id="resources">
+          <Resources />
+        </section>
+
+        <section id="help">
+          <Help />
+        </section>
       </div>
-
-      <section id="resources">
-        <Resources />
-      </section>
-
-      <section>
-        <Help />
-      </section>
     </>
   );
 }

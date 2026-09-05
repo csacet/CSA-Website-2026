@@ -17,6 +17,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isEarthTheme, setIsEarthTheme] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,6 +33,14 @@ function Navbar() {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+
+      const earthSurface = document.querySelector(".csa-earth-surface");
+      if (earthSurface) {
+        const rect = earthSurface.getBoundingClientRect();
+        setIsEarthTheme(rect.top <= 65);
+      } else {
+        setIsEarthTheme(false);
       }
     };
 
@@ -104,7 +113,10 @@ function Navbar() {
         aria-hidden="true"
       />
 
-      <header className={`topbar ${isScrolled ? "is-scrolled" : ""}`} aria-label="Primary">
+      <header
+        className={`topbar ${isScrolled ? "is-scrolled" : ""} ${isEarthTheme ? "is-earth" : ""}`}
+        aria-label="Primary"
+      >
         <Link
           className="brand"
           to="/#home"

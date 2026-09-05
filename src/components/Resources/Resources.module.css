@@ -15,10 +15,8 @@
 
 .container {
   position: relative;
-  background-color: var(--resources-bg);
-  background-image: var(--csa-noise-image);
-  background-size: 180px 180px;
-  background-blend-mode: multiply;
+  background-color: transparent;
+  background-image: none;
   font-family: var(--sans);
   color: var(--text-primary);
   padding-bottom: 140px;
@@ -65,10 +63,8 @@ a {
 }
 
 .sub-resources {
-  background-color: var(--resources-bg);
-  background-image: var(--csa-noise-image);
-  background-size: 180px 180px;
-  background-blend-mode: multiply;
+  background-color: transparent;
+  background-image: none;
   display: flex;
   flex-direction: column;
 }
@@ -104,10 +100,8 @@ a {
 .nested-resources {
   display: flex;
   flex-direction: column;
-  background-color: var(--resources-bg);
-  background-image: var(--csa-noise-image);
-  background-size: 180px 180px;
-  background-blend-mode: multiply;
+  background-color: transparent;
+  background-image: none;
 }
 
 .nested-resource-item {
