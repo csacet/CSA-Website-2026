@@ -21,10 +21,6 @@
   color: var(--csa-earth-text);
 }
 
-.achievement-heading {
-  --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
-}
-
 .carousel {
   position: relative;
   display: flex;
@@ -146,11 +142,10 @@
   border-radius: clamp(1.1rem, 2vw, 2.25rem);
   overflow: hidden;
   background: #e8e0d6;
-  filter:
-    drop-shadow(0px 15px 33px rgba(0,0,0,0.10))
-    drop-shadow(0px 59px 59px rgba(0,0,0,0.09))
-    drop-shadow(0px 134px 80px rgba(0,0,0,0.05));
-  transition: transform 0.35s ease, filter 0.35s ease;
+  box-shadow:
+    0 1.35rem 2.75rem rgba(32, 32, 32, 0.28),
+    0 0.4rem 0.95rem rgba(32, 32, 32, 0.16);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .poster-img {
@@ -265,10 +260,6 @@
     padding-bottom: calc(clamp(2.7rem, 9vw, 3.6rem) + 4rem);
   }
 
-  .achievement-heading {
-    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
-  }
-
   .description {
     width: min(90%, 26rem);
     margin: 1rem 0 1.6rem;
@@ -282,7 +273,6 @@
   }
 
   .achievement-heading {
-    --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
     padding-bottom: clamp(0.75rem, 1.2vw, 1.1rem);
   }
 }

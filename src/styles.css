@@ -104,6 +104,18 @@ section[id] {
   scroll-margin-top: 5.8rem;
 }
 
+.csa-earth-surface {
+  background-color: var(--csa-earth-bg);
+  background-image: var(--csa-noise-image);
+  background-size: 180px 180px;
+  background-blend-mode: multiply;
+}
+
+.csa-earth-surface .csa-earth-section {
+  background-color: transparent;
+  background-image: none;
+}
+
 .csa-earth-section {
   position: relative;
   isolation: isolate;
@@ -234,6 +246,12 @@ section[id] {
   right: clamp(2rem, 6vw, 5rem);
 }
 
+@media (min-width: 641px) and (max-width: 980px) {
+  .csa-section-heading {
+    --csa-heading-size: clamp(5rem, 10vw, 6.25rem);
+  }
+}
+
 
 @media (max-width: 640px) {
   .csa-earth-section {
@@ -242,7 +260,7 @@ section[id] {
   }
 
   .csa-section-heading {
-    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
+    --csa-heading-size: clamp(2.8rem, 13vw, 5rem);
     padding-block: clamp(1rem, 5vw, 1.4rem);
   }
 

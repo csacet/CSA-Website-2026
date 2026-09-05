@@ -24,10 +24,6 @@
   padding-bottom: 140px;
 }
 
-.resources-heading {
-  --csa-heading-size: clamp(3.5rem, 13vw, 8.125rem);
-}
-
 .title-container {
   display: flex;
   flex-direction: column;
@@ -197,10 +193,6 @@ a {
     --resource-edge-gap: 10%;
   }
 
-  .resources-heading {
-    --csa-heading-size: clamp(5rem, 10vw, 6.25rem);
-  }
-
   .resource-name {
     font-size: 37px;
     padding-left: var(--resource-edge-gap);
@@ -234,10 +226,6 @@ a {
 }
 
 @media (min-width: 1024px) {
-  .resources-heading {
-    --csa-heading-size: 130px;
-  }
-
   .resource-name {
     font-size: 45px;
   }
@@ -293,7 +281,4 @@ a {
     padding-bottom: clamp(2.7rem, 9vw, 3.6rem);
   }
 
-  .resources-heading {
-    --csa-heading-size: clamp(3rem, 14vw, 5.25rem);
-  }
 }
