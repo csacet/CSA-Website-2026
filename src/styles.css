@@ -316,13 +316,28 @@ section[id] {
   background:
     radial-gradient(
       circle at 72% 38%,
-      rgba(184, 128, 116, 0.42),
-      transparent 32%
+      rgba(184, 128, 116, 0.38),
+      transparent 38%
     ),
-    radial-gradient(circle at 18% 20%, rgba(72, 50, 68, 0.62), transparent 35%);
+    radial-gradient(circle at 18% 20%, rgba(72, 50, 68, 0.55), transparent 38%),
+    var(--bg);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(140px, 20vh, 260px);
+  background: linear-gradient(to bottom, transparent 0%, var(--bg) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 3;
   max-width: 43rem;
   padding-top: 2.5rem;
 }

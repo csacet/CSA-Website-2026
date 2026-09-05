@@ -1,5 +1,6 @@
 .art-card {
   position: relative;
+  z-index: 3;
   width: min(100%, 38rem);
   justify-self: end;
   margin-top: 2.6rem;
