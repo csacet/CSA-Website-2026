@@ -142,19 +142,6 @@ function Navbar() {
         </nav>
 
         <div className="topbar-actions">
-          <div
-            className="topbar-target-icon"
-            aria-hidden="true"
-            title="Computer Science Association"
-          >
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-              <circle cx="17" cy="17" r="15.5" stroke="currentColor" strokeWidth="1.8" />
-              <circle cx="17" cy="17" r="11" stroke="currentColor" strokeWidth="1.8" />
-              <circle cx="17" cy="17" r="6.5" stroke="currentColor" strokeWidth="1.8" />
-              <circle cx="17" cy="17" r="2.2" fill="currentColor" />
-            </svg>
-          </div>
-
           <button
             className={`menu-toggle ${isMenuOpen ? "is-active" : ""}`}
             onClick={toggleMenu}

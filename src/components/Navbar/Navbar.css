@@ -5,7 +5,7 @@
   right: 0;
   z-index: 1000;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1.5rem;
   padding: 1rem 2.2rem;
@@ -38,29 +38,6 @@
   gap: 1rem;
   justify-content: flex-end;
   position: relative;
-}
-
-.topbar-target-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  opacity: 0.88;
-  cursor: default;
-  transition:
-    opacity 0.2s ease,
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.topbar-target-icon:hover {
-  opacity: 1;
-  transform: rotate(30deg) scale(1.06);
-}
-
-@media (max-width: 1024px) {
-  .topbar-target-icon {
-    display: none;
-  }
 }
 
 .menu-toggle {
@@ -361,10 +338,6 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-.topbar.is-earth .brand {
-  color: #202020;
-}
-
 .topbar.is-earth .nav-pill {
   border-color: #202020;
   color: #202020;
@@ -385,10 +358,6 @@
   background: #2b2b2b;
   border-color: #2b2b2b;
   color: #836c5a;
-}
-
-.topbar.is-earth .topbar-target-icon {
-  color: #202020;
 }
 
 .topbar.is-earth .hamburger-inner,
