@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import csaLogo from "../../assets/csa_logo.svg";
 import "./Navbar.css";
 
@@ -11,9 +11,14 @@ const navItems = [
   "Resources",
 ];
 
-const getSectionHref = (item) => `/#${item.toLowerCase()}`;
+const getSectionHref = (item) => {
+  if (item === "About") return "/about";
+  return `/#${item.toLowerCase()}`;
+};
 
 function Navbar() {
+  const location = useLocation();
+  const isAboutRoute = location.pathname === "/about";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -117,19 +122,37 @@ function Navbar() {
           className={`nav-pills ${isMenuOpen ? "is-open" : ""}`}
           aria-label="Section navigation"
         >
-          {navItems.map((item) => (
-            <Link
-              key={item}
-              to={getSectionHref(item)}
-              className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
-              onClick={closeMenu}
-            >
-              {item}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = isAboutRoute
+              ? item.toLowerCase() === "about"
+              : activeSection === item.toLowerCase();
+            return (
+              <Link
+                key={item}
+                to={getSectionHref(item)}
+                className={`nav-pill ${isActive ? "active" : ""}`}
+                onClick={closeMenu}
+              >
+                {item}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="topbar-actions">
+          <div
+            className="topbar-target-icon"
+            aria-hidden="true"
+            title="Computer Science Association"
+          >
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <circle cx="17" cy="17" r="15.5" stroke="currentColor" strokeWidth="1.8" />
+              <circle cx="17" cy="17" r="11" stroke="currentColor" strokeWidth="1.8" />
+              <circle cx="17" cy="17" r="6.5" stroke="currentColor" strokeWidth="1.8" />
+              <circle cx="17" cy="17" r="2.2" fill="currentColor" />
+            </svg>
+          </div>
+
           <button
             className={`menu-toggle ${isMenuOpen ? "is-active" : ""}`}
             onClick={toggleMenu}

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
 import HeroArtwork from "./components/HeroArtwork/HeroArtwork";
 import Navbar from "./components/Navbar/Navbar";
 import Gallery from "./components/Gallery/Gallery";
@@ -10,6 +10,7 @@ import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
 import Help from "./components/Help/Help";
 import Achievements from "./components/Achievements/Achievements";
+import AboutPage from "./pages/About/AboutPage";
 import "./styles.css";
 
 function ScrollToHash() {
@@ -21,9 +22,18 @@ function ScrollToHash() {
       return;
     }
 
-    const target = document.getElementById(hash.slice(1));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const scrollToElement = () => {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+      return false;
+    };
+
+    if (!scrollToElement()) {
+      const timer = setTimeout(scrollToElement, 100);
+      return () => clearTimeout(timer);
     }
   }, [hash, pathname]);
 
@@ -53,9 +63,9 @@ function HomePage() {
             with the department, access resources, opportunities and updates.
           </p>
 
-          <a className="cta" href="#about">
+          <Link className="cta" to="/about">
             Explore <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
 
         <HeroArtwork />
@@ -105,6 +115,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/alumni-insights/:slug" element={<AlumniPostRoute />} />
       </Routes>
     </main>

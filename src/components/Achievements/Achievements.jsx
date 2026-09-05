@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import achievementsData from "./achievements.json";
 import "./Achievements.css";
 

@@ -1,0 +1,342 @@
+.about-page-root {
+  background-color: #443741;
+  color: #ffffff;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+  font-family: "Inter", sans-serif;
+}
+
+/* Outer container provides scroll travel space for pinned horizontal effect */
+.about-scroll-container {
+  position: relative;
+  height: 330vh;
+  width: 100%;
+}
+
+/* Sticky viewport locks to top of window while scrolling */
+.about-sticky-viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5.5rem;
+  background-color: #443741;
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------
+   Hero Header: AboutUs + Framing Lines + Pixel Dino
+   ------------------------------------------------------------- */
+.about-header-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(180px, 26vh, 260px);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.about-title-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.2rem;
+  z-index: 5;
+}
+
+.about-main-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(4.4rem, 10vw, 9.6rem);
+  letter-spacing: -0.045em;
+  color: #ffffff;
+  line-height: 0.95;
+  margin: 0;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Construction Grid Lines */
+.about-grid-line {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.76);
+  pointer-events: none;
+}
+
+.horizontal-top {
+  left: 0;
+  right: 0;
+  top: 34%;
+  height: 1.5px;
+  z-index: 6;
+}
+
+.horizontal-bottom {
+  left: 0;
+  right: 0;
+  bottom: 8%;
+  height: 1.5px;
+  z-index: 6;
+}
+
+.vertical-left {
+  left: 0;
+  top: -24px;
+  bottom: -28px;
+  width: 1.5px;
+  z-index: 6;
+}
+
+.vertical-right {
+  right: 0;
+  top: -24px;
+  bottom: -28px;
+  width: 1.5px;
+  z-index: 6;
+}
+
+/* Dino standing on top horizontal line */
+.about-dino-wrapper {
+  position: absolute;
+  right: clamp(2rem, 8vw, 8rem);
+  bottom: 1.5px;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  transition: transform 0.15s ease;
+}
+
+.about-dino-sprite {
+  width: clamp(42px, 3.2vw, 56px);
+  height: auto;
+  display: block;
+  transform-origin: bottom center;
+}
+
+.about-dino-wrapper:hover .about-dino-sprite {
+  transform: scale(1.1);
+}
+
+@keyframes dinoJumpKeyframes {
+  0% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-42px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about-dino-sprite.dino-jumping {
+  animation: dinoJumpKeyframes 0.65s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* -------------------------------------------------------------
+   Horizontal Track Viewport
+   ------------------------------------------------------------- */
+.about-track-viewport {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.about-track-content {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  padding-left: clamp(4rem, 10vw, 12rem);
+  padding-right: clamp(8rem, 16vw, 18rem);
+  position: relative;
+  will-change: transform;
+  box-sizing: border-box;
+}
+
+/* Dynamic dashed connection line between circles */
+.about-dashed-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Section Card */
+.about-section-card {
+  width: clamp(360px, 28vw, 480px);
+  flex-shrink: 0;
+  margin-right: clamp(100px, 11vw, 190px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem 3.5rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Alternating positioning */
+.card-circle-top {
+  justify-content: space-between;
+}
+
+.card-circle-bottom {
+  justify-content: space-between;
+}
+
+/* White Circle Node */
+.about-circle-node {
+  width: clamp(145px, 12.5vw, 185px);
+  height: clamp(145px, 12.5vw, 185px);
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.26);
+  flex-shrink: 0;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.28s ease;
+  user-select: none;
+}
+
+.about-circle-node:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.36);
+}
+
+.section-svg-icon {
+  width: clamp(56px, 4.8vw, 76px);
+  height: clamp(56px, 4.8vw, 76px);
+  display: block;
+}
+
+/* Card Text Styling */
+.about-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 440px;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+.about-card-heading {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.3rem, 3.8vw, 4.3rem);
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  line-height: 1.06;
+  margin: 0 0 1.1rem 0;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  user-select: none;
+}
+
+.about-card-desc {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.02rem, 1.2vw, 1.25rem);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------
+   Page Footer
+   ------------------------------------------------------------- */
+.about-page-footer {
+  position: relative;
+  z-index: 20;
+  background: #443741;
+}
+
+/* -------------------------------------------------------------
+   Mobile & Tablet Responsiveness
+   ------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .about-sticky-viewport {
+    padding-top: 5rem;
+  }
+
+  .about-header-section {
+    height: 180px;
+  }
+
+  .about-main-title {
+    font-size: clamp(3.2rem, 12vw, 5.2rem);
+  }
+
+  .about-scroll-container {
+    height: 280vh;
+  }
+
+  .about-section-card {
+    width: clamp(300px, 75vw, 380px);
+    margin-right: 3.5rem;
+    padding: 1rem 0.5rem 2rem;
+  }
+
+  .about-circle-node {
+    width: 130px;
+    height: 130px;
+  }
+
+  .section-svg-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .about-card-heading {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-card-desc {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-track-content {
+    padding-left: 2rem;
+    padding-right: 4rem;
+  }
+
+  .about-section-card {
+    width: 290px;
+    margin-right: 2.2rem;
+  }
+
+  .about-circle-node {
+    width: 110px;
+    height: 110px;
+  }
+
+  .section-svg-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
