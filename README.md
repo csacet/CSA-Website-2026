@@ -1,4 +1,6 @@
-# Computer Science Association (CSA) CET
+# Computer Science Association (CSA) CET      
+
+<img width="1920" height="930" alt="Screenshot From 2026-07-14 23-55-49" src="https://github.com/user-attachments/assets/7dcf7679-0baf-4dba-bb35-4cc77c18b488" />
 
 A responsive landing page for the Computer Science Association at CET.
 
@@ -6,11 +8,7 @@ A responsive landing page for the Computer Science Association at CET.
 - **Framework:** React 18
 - **Build Tool:** Vite
 - **Styling:** Vanilla CSS
-- **Deployment:** GitHub Pages
-
-## Features
-- **Responsive Design:** Optimized for desktop and mobile views.
-- **Interactive UI:** Smooth navigation with glassmorphism-inspired pills.
+- **Deployment:** Vercel
 
 ## Getting Started
 
