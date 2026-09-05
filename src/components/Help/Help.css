@@ -62,10 +62,6 @@
       var(--text-primary),
       var(--text-secondary));
   flex-shrink: 0; */
-.help-heading {
-  --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
-}
-
 .description {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
@@ -206,7 +202,6 @@
   }
 
   .help-heading {
-    --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
     padding-bottom: clamp(0.75rem, 1.2vw, 1.1rem);
   }
 
@@ -231,10 +226,6 @@
   .help-page.csa-earth-section {
     padding-top: clamp(2.4rem, 8vw, 3.2rem);
     padding-bottom: calc(clamp(2.7rem, 9vw, 3.6rem) + 4rem);
-  }
-
-  .help-heading {
-    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
   }
 
   .description {

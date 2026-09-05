@@ -21,10 +21,6 @@
   color: var(--csa-earth-text);
 }
 
-.achievement-heading {
-  --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
-}
-
 .carousel {
   position: relative;
   display: flex;
@@ -265,10 +261,6 @@
     padding-bottom: calc(clamp(2.7rem, 9vw, 3.6rem) + 4rem);
   }
 
-  .achievement-heading {
-    --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
-  }
-
   .description {
     width: min(90%, 26rem);
     margin: 1rem 0 1.6rem;
@@ -282,7 +274,6 @@
   }
 
   .achievement-heading {
-    --csa-heading-size: clamp(3.7rem, 14vw, 9rem);
     padding-bottom: clamp(0.75rem, 1.2vw, 1.1rem);
   }
 }

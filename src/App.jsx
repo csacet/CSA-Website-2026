@@ -69,14 +69,16 @@ function HomePage() {
         <Gallery />
       </section>
 
-      <section id="achievements">
-        <Achievements />
-      </section>
+      <div className="csa-earth-surface">
+        <section id="achievements">
+          <Achievements />
+        </section>
 
-      <section id="placements">
-        <Placements />
-        <AlumniInsights />
-      </section>
+        <section id="placements">
+          <Placements />
+          <AlumniInsights />
+        </section>
+      </div>
 
       <section id="resources">
         <Resources />
