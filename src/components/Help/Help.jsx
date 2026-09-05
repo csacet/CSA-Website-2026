@@ -5,24 +5,24 @@ const contacts = [
     {
         id : 1,
         name : "Abel John Jose",
-        role : "Department Representative",
-        phoneNo : "+91 1234567890",
+        role : "Secretary",
+        phoneNo : "+91 79076 12039",
         mail : "example@email.com"
     },
 
     {   
         id : 2,
-        name : "Abel John Jose",
-        role : "Department Representative",
-        phoneNo : "+91 1234567890",
+        name : "Devanarayanan H",
+        role : "Joint Secretary",
+        phoneNo : "+91 81118 35721",
         mail : "example@email.com"
     },
 
     {   
         id : 3,
-        name : "Abel John Jose",
-        role : "Department Representative",
-        phoneNo : "+91 1234567890",
+        name : "Pridhu Raj RS",
+        role : "Association Coordinator",
+        phoneNo : "+91 80750 65371",
         mail : "example@email.com"
     },
 
@@ -43,7 +43,7 @@ function Help(){
         </svg>
         <div className="csa-section-heading-frame">
             <span className="csa-section-heading-line" />                                                                              
-            <h1 className="csa-section-heading-title">Help</h1>
+            <h1 className="csa-section-heading-title">Contact</h1>
             <span className="csa-section-heading-line" />
         </div>
         </div>
