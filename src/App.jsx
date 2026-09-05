@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Route, Routes, useLocation, useParams } from "react-router-dom";
 import HeroArtwork from "./components/HeroArtwork/HeroArtwork";
 import Navbar from "./components/Navbar/Navbar";
+import About from "./components/About/About";
 import Gallery from "./components/Gallery/Gallery";
 import Execom from "./components/Execom/Execom";
 import Resources from "./components/Resources/Resources";
@@ -10,7 +11,6 @@ import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
 import Help from "./components/Help/Help";
 import Achievements from "./components/Achievements/Achievements";
-import AboutPage from "./pages/About/AboutPage";
 import "./styles.css";
 
 function ScrollToHash() {
@@ -63,13 +63,15 @@ function HomePage() {
             with the department, access resources, opportunities and updates.
           </p>
 
-          <Link className="cta" to="/about">
+          <a className="cta" href="#about">
             Explore <span aria-hidden="true">→</span>
-          </Link>
+          </a>
         </div>
 
         <HeroArtwork />
       </section>
+
+      <About />
 
       <section id="execom">
         <Execom />
@@ -115,7 +117,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/alumni-insights/:slug" element={<AlumniPostRoute />} />
       </Routes>
     </main>

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import dinoSvg from "../../assets/dino.svg";
-import Help from "../../components/Help/Help";
-import "./AboutPage.css";
+import "./About.css";
 
 const sectionsData = [
   {
@@ -99,7 +98,7 @@ function SectionIcon({ type }) {
     );
   }
 
-  // default type === 'mission'
+  // default: mission
   return (
     <svg
       viewBox="0 0 64 64"
@@ -119,7 +118,7 @@ function SectionIcon({ type }) {
   );
 }
 
-export default function AboutPage() {
+export default function About() {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   const circleRefs = useRef([]);
@@ -139,6 +138,7 @@ export default function AboutPage() {
         return;
       }
 
+      // Progress goes from 0 when container top hits viewport top to 1 when container bottom reaches viewport bottom
       const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
       const trackWidth = track.scrollWidth;
       const viewportWidth = window.innerWidth;
@@ -198,7 +198,7 @@ export default function AboutPage() {
     };
 
     computeLines();
-    const timer = setTimeout(computeLines, 120);
+    const timer = setTimeout(computeLines, 150);
     window.addEventListener("resize", computeLines);
     return () => {
       clearTimeout(timer);
@@ -213,104 +213,96 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="about-page-root">
-      {/* Pinned Scroll Container */}
-      <div ref={containerRef} className="about-scroll-container">
-        <div className="about-sticky-viewport">
-          {/* Header Section */}
-          <div className="about-header-section">
-            <div className="about-grid-line horizontal-top">
-              <div
-                className="about-dino-wrapper"
-                title="Click me to jump!"
-                onClick={handleDinoClick}
-              >
-                <img
-                  src={dinoSvg}
-                  alt="CSA 8-bit Dino"
-                  className={`about-dino-sprite ${isDinoJumping ? "dino-jumping" : ""}`}
-                />
-              </div>
+    <section id="about" ref={containerRef} className="about-section-container">
+      <div className="about-sticky-viewport">
+        {/* Header Section */}
+        <div className="about-header-section">
+          <div className="about-grid-line horizontal-top">
+            <div
+              className="about-dino-wrapper"
+              title="Click me to jump!"
+              onClick={handleDinoClick}
+            >
+              <img
+                src={dinoSvg}
+                alt="CSA 8-bit Dino"
+                className={`about-dino-sprite ${isDinoJumping ? "dino-jumping" : ""}`}
+              />
             </div>
-
-            <div className="about-title-container">
-              <div className="about-grid-line vertical-left" />
-              <h1 className="about-main-title">AboutUs</h1>
-              <div className="about-grid-line vertical-right" />
-            </div>
-
-            <div className="about-grid-line horizontal-bottom" />
           </div>
 
-          {/* Horizontal Track Viewport */}
-          <div className="about-track-viewport">
-            <div ref={trackRef} className="about-track-content">
-              {/* SVG for connecting dashed lines */}
-              <svg className="about-dashed-svg" aria-hidden="true">
-                {lines.map((l) => (
-                  <line
-                    key={l.id}
-                    x1={l.x1}
-                    y1={l.y1}
-                    x2={l.x2}
-                    y2={l.y2}
-                    stroke="rgba(255, 255, 255, 0.52)"
-                    strokeWidth="2.2"
-                    strokeDasharray="9 9"
-                  />
-                ))}
-              </svg>
+          <div className="about-title-container">
+            <div className="about-grid-line vertical-left" />
+            <h1 className="about-main-title">AboutUs</h1>
+            <div className="about-grid-line vertical-right" />
+          </div>
 
-              {/* Sections Cards */}
-              {sectionsData.map((sec, idx) => (
-                <div
-                  key={sec.id}
-                  className={`about-section-card ${
-                    sec.isCircleTop ? "card-circle-top" : "card-circle-bottom"
-                  }`}
-                >
-                  {sec.isCircleTop ? (
-                    <>
-                      <div
-                        ref={(el) => {
-                          circleRefs.current[idx] = el;
-                        }}
-                        className="about-circle-node"
-                      >
-                        <SectionIcon type={sec.icon} />
-                      </div>
-                      <div className="about-card-text">
-                        <h2 className="about-card-heading">{sec.title}</h2>
-                        <p className="about-card-desc">{sec.description}</p>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="about-card-text">
-                        <h2 className="about-card-heading">{sec.title}</h2>
-                        <p className="about-card-desc">{sec.description}</p>
-                      </div>
-                      <div
-                        ref={(el) => {
-                          circleRefs.current[idx] = el;
-                        }}
-                        className="about-circle-node"
-                      >
-                        <SectionIcon type={sec.icon} />
-                      </div>
-                    </>
-                  )}
-                </div>
+          <div className="about-grid-line horizontal-bottom" />
+        </div>
+
+        {/* Horizontal Track Viewport */}
+        <div className="about-track-viewport">
+          <div ref={trackRef} className="about-track-content">
+            {/* SVG for connecting dashed lines */}
+            <svg className="about-dashed-svg" aria-hidden="true">
+              {lines.map((l) => (
+                <line
+                  key={l.id}
+                  x1={l.x1}
+                  y1={l.y1}
+                  x2={l.x2}
+                  y2={l.y2}
+                  stroke="rgba(255, 255, 255, 0.52)"
+                  strokeWidth="2.2"
+                  strokeDasharray="9 9"
+                />
               ))}
-            </div>
+            </svg>
+
+            {/* Sections Cards */}
+            {sectionsData.map((sec, idx) => (
+              <div
+                key={sec.id}
+                className={`about-section-card ${
+                  sec.isCircleTop ? "card-circle-top" : "card-circle-bottom"
+                }`}
+              >
+                {sec.isCircleTop ? (
+                  <>
+                    <div
+                      ref={(el) => {
+                        circleRefs.current[idx] = el;
+                      }}
+                      className="about-circle-node"
+                    >
+                      <SectionIcon type={sec.icon} />
+                    </div>
+                    <div className="about-card-text">
+                      <h2 className="about-card-heading">{sec.title}</h2>
+                      <p className="about-card-desc">{sec.description}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="about-card-text">
+                      <h2 className="about-card-heading">{sec.title}</h2>
+                      <p className="about-card-desc">{sec.description}</p>
+                    </div>
+                    <div
+                      ref={(el) => {
+                        circleRefs.current[idx] = el;
+                      }}
+                      className="about-circle-node"
+                    >
+                      <SectionIcon type={sec.icon} />
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Footer / Help Section */}
-      <footer className="about-page-footer">
-        <Help />
-      </footer>
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import csaLogo from "../../assets/csa_logo.svg";
 import "./Navbar.css";
 
@@ -11,14 +11,9 @@ const navItems = [
   "Resources",
 ];
 
-const getSectionHref = (item) => {
-  if (item === "About") return "/about";
-  return `/#${item.toLowerCase()}`;
-};
+const getSectionHref = (item) => `/#${item.toLowerCase()}`;
 
 function Navbar() {
-  const location = useLocation();
-  const isAboutRoute = location.pathname === "/about";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -122,21 +117,16 @@ function Navbar() {
           className={`nav-pills ${isMenuOpen ? "is-open" : ""}`}
           aria-label="Section navigation"
         >
-          {navItems.map((item) => {
-            const isActive = isAboutRoute
-              ? item.toLowerCase() === "about"
-              : activeSection === item.toLowerCase();
-            return (
-              <Link
-                key={item}
-                to={getSectionHref(item)}
-                className={`nav-pill ${isActive ? "active" : ""}`}
-                onClick={closeMenu}
-              >
-                {item}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <Link
+              key={item}
+              to={getSectionHref(item)}
+              className={`nav-pill ${activeSection === item.toLowerCase() ? "active" : ""}`}
+              onClick={closeMenu}
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
 
         <div className="topbar-actions">

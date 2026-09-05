@@ -1,18 +1,22 @@
-.about-page-root {
+/* -------------------------------------------------------------
+   About Section on Single Landing Page
+   ------------------------------------------------------------- */
+#about {
+  scroll-margin-top: 0;
   background-color: #443741;
   color: #ffffff;
   width: 100%;
-  min-height: 100vh;
   position: relative;
   overflow-x: clip;
   font-family: "Inter", sans-serif;
 }
 
 /* Outer container provides scroll travel space for pinned horizontal effect */
-.about-scroll-container {
+.about-section-container {
   position: relative;
-  height: 330vh;
+  height: 320vh;
   width: 100%;
+  background-color: #443741;
 }
 
 /* Sticky viewport locks to top of window while scrolling */
@@ -29,6 +33,7 @@
   padding-top: 5.5rem;
   background-color: #443741;
   box-sizing: border-box;
+  z-index: 5;
 }
 
 /* -------------------------------------------------------------
@@ -193,7 +198,6 @@
   z-index: 2;
 }
 
-/* Alternating positioning */
 .card-circle-top {
   justify-content: space-between;
 }
@@ -264,15 +268,6 @@
 }
 
 /* -------------------------------------------------------------
-   Page Footer
-   ------------------------------------------------------------- */
-.about-page-footer {
-  position: relative;
-  z-index: 20;
-  background: #443741;
-}
-
-/* -------------------------------------------------------------
    Mobile & Tablet Responsiveness
    ------------------------------------------------------------- */
 @media (max-width: 900px) {
@@ -288,7 +283,7 @@
     font-size: clamp(3.2rem, 12vw, 5.2rem);
   }
 
-  .about-scroll-container {
+  .about-section-container {
     height: 280vh;
   }
 
