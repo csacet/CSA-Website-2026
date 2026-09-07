@@ -1,10 +1,10 @@
 # Finding the Learning in Machine Learning 
 
-This piece is intended to be a window into not just the where or what, but most 
+**By Athul Anoop, CS' 27**
 
-importantly the how — how you can explore machine learning and, in a broader sense, anything that you're curious about. The resources and domains mentioned here are merely directional and are not intended to be authoritative sources—mostly because I, too, am in the process of exploring this vast field, and it would be careless to view this article in isolation. 
+This piece is intended to be a window into not just the where or what, but most importantly the how — how you can explore machine learning and, in a broader sense, anything that you're curious about. The resources and domains mentioned here are merely directional and are not intended to be authoritative sources—mostly because I, too, am in the process of exploring this vast field, and it would be careless to view this article in isolation. 
 
-Most resources tend to start off with libraries such as PyTorch or TensorFlow <mark>.</mark> While these are incredibly useful tools, starting here can create the illusion of understanding machine learning. What has really happened is that you have become familiar with the API of a particular library, along with a rough understanding of the general process or template for building and training models. That is useful, but it does not necessarily equip you with the knowledge required to design your own machine learning architectures, models, or systems. 
+Most resources tend to start off with libraries such as PyTorch or TensorFlow. While these are incredibly useful tools, starting here can create the illusion of understanding machine learning. What has really happened is that you have become familiar with the API of a particular library, along with a rough understanding of the general process or template for building and training models. That is useful, but it does not necessarily equip you with the knowledge required to design your own machine learning architectures, models, or systems. 
 
 That brings me to what I believe is the more important question: do you want to use machine learning to build things, or do you want to build the machine learning systems themselves? 
 
